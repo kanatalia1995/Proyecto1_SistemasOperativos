@@ -4,7 +4,8 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
-#define PORT 8080
+#include "connections.c"
+
   
 int main(int argc, char const *argv[])
 {
@@ -25,7 +26,7 @@ int main(int argc, char const *argv[])
     serv_addr.sin_port = htons(PORT);
       
     // Convert IPv4 and IPv6 addresses from text to binary form
-    if(inet_pton(AF_INET, "52.14.112.169", &serv_addr.sin_addr)<=0) 
+    if(inet_pton(AF_INET, URL_SERVER, &serv_addr.sin_addr)<=0) 
     {
         printf("\nInvalid address/ Address not supported \n");
         return -1;
@@ -36,9 +37,13 @@ int main(int argc, char const *argv[])
         printf("\nConnection Failed \n");
         return -1;
     }
-    send(sock , hello , strlen(hello) , 0 );
+    char * dataInfo = "{\"user\": \"User1\" ,\"password\": \"pass1\" }"; 
+    send(sock , dataInfo , strlen(dataInfo) , 0 );
     printf("From server: message was sent\n");
     valread = read( sock , buffer, 1024);
     printf("%s\n",buffer );
+    send(sock,"exit",strlen("exit"),0);
+    valread = read( sock , buffer, 1024);
+    printf("%s\n",buffer);
     return 0;
 }
