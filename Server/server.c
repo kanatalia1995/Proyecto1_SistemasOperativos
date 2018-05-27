@@ -9,34 +9,10 @@
 #include "message.c"
 #include "user.c"
 #include "connections.c"
+#include "thread.c"
 
 
-typedef struct thread_data {
- char* data;
- int socket;
- int sockfd;
-} tdata_t; 
 
-
-void *threadFunction(void *threadArg) {
-    tdata_t *data = (tdata_t *) threadArg;
-    // close(data->sockfd);
-    char *user_json = data->data;
-    int  socket = data->socket;
-    int flag = 1;
-    int valread;
-    char buffer[124] = {0};
-    send(socket , user_json, strlen(user_json) , 0 ); //Send all user information
-    while(flag){
-        valread = read( socket, buffer, 124);
-        if (strcmp(buffer, "exit") == 0) {
-            flag = 0;
-        } 
-        else {
-            send(socket ,UNKNOW_OPTION, strlen(UNKNOW_OPTION) , 0 );
-        }
-    }
-}
 
 
 
@@ -91,6 +67,7 @@ int main(int argc, char const *argv[])
         }else{
             pthread_t thread_id;
             char *userInfo = getUserInformation(userPath);
+            // printf("%s\n", userInfo);
             tdata_t *data = (tdata_t *) malloc(sizeof(tdata_t));
             data-> data= userInfo;
             data->socket = new_socket;
@@ -99,7 +76,7 @@ int main(int argc, char const *argv[])
             char title[50] = USER_INIT;
             char *message = strcat(title,getUserName(userInfo));
             logger(message);
-            close(sockfd);
+            // close(sockfd);
         }  
     }
     

@@ -14,9 +14,10 @@ char *openJSONFile(char* path){
         FILE *f = fopen (path, "r");
         if (f)
         {
-            fseek (f, 0, SEEK_END);
+            fseek (f, 0L, SEEK_END);
             length = ftell (f);
-            fseek (f, 0, SEEK_SET);
+            printf("LENGTH%ld\n", length );
+            fseek (f, 0L, SEEK_SET);
             buffer = malloc (length);
             if (buffer)
             {

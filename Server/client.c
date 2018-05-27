@@ -5,8 +5,49 @@
 #include <netinet/in.h>
 #include <string.h>
 #include "connections.c"
+#include "tools.c"
 
-  
+void saveImageFile(int sock){
+    send(sock,"{\"command\": \"GET_IMAGE\",\"path\":\"database/music/images/kissing_strangers.jpg\"}",strlen("{\"command\": \"GET_IMAGE\",\"path\":\"database/music/images/kissing_strangers.jpg\"}"),0);
+    int size_image = 0;
+    int valread = read(sock, &size_image,sizeof(int));
+
+    char *buffer_image = malloc(256);
+    FILE *file = fopen("database/music/images/kissing_strangerscopy.jpg", "wb");
+    int rval;
+    while ( size_image > 0){
+        rval = read(sock, buffer_image, sizeof(buffer_image), 0);
+        fwrite(buffer_image, 1, rval, file);
+        size_image-=rval;
+    }
+    printf("%s\n","IMAGE was saved" );
+    fclose(file);
+    // valread = read(sock, buffer_image,size_image);
+    // printf("%s\n", buffer_image );
+    // saveImageFile(buffer_image,"database/music/images/kissing_strangerscopy.jpg");
+    free(buffer_image);
+}
+void saveMp3File(int sock){
+    char path[] = "{\"command\": \"GET_AUDIO\",\"path\":\"database/music/kissing_strangers.mp3\"}";
+    send(sock, "{\"command\": \"GET_AUDIO\",\"path\":\"database/music/kissing_strangers.mp3\"}",strlen( "{\"command\": \"GET_AUDIO\",\"path\":\"database/music/kissing_strangers.mp3\"}"),0);
+    int size_audio = 0;
+    int valread = read(sock, &size_audio,sizeof(int));
+
+    char *buffer_audio = malloc(256);
+    FILE *file = fopen("database/music/kissing_strangerscopy.mp3", "wb");
+    int rval;
+    while ( size_audio > 0){
+        rval = read(sock, buffer_audio, sizeof(buffer_audio), 0);
+        fwrite(buffer_audio, 1, rval, file);
+        size_audio-=rval;
+    }
+    printf("%s\n","AUDIO was saved" );
+    fclose(file);
+    // valread = read(sock, buffer_image,size_image);
+    // printf("%s\n", buffer_image );
+    // saveImageFile(buffer_image,"database/music/images/kissing_strangerscopy.jpg");
+    free(buffer_audio);
+}
 int main(int argc, char const *argv[])
 {
     struct sockaddr_in address;
@@ -42,8 +83,10 @@ int main(int argc, char const *argv[])
     printf("From server: message was sent\n");
     valread = read( sock , buffer, 1024);
     printf("%s\n",buffer );
-    send(sock,"exit",strlen("exit"),0);
-    valread = read( sock , buffer, 1024);
-    printf("%s\n",buffer);
+    saveImageFile(sock);
+    saveMp3File(sock);
+    send(sock,"{\"command\": \"EXIT\"}",strlen("{\"command\": \"EXIT\"}"),0);
+    // valread = read( sock , buffer, 1024);
+    // printf("%s\n",buffer);
     return 0;
 }
