@@ -138,7 +138,7 @@ void *threadFunction(void *threadArg) {
                 flag = 0;
             }
             //IMAGEFILE
-            if(strcmp(command,GET_IMAGE) == 0){
+            else if(strcmp(command,GET_IMAGE) == 0){
                 char* image_path = getPath(buffer);
                 if(image_path == NULL){
                     send(socket_num ,IMAGE_NOT_FOUND, strlen(IMAGE_NOT_FOUND), 0 );
@@ -147,7 +147,7 @@ void *threadFunction(void *threadArg) {
                 }
             }
             //AUDIO FILE
-            if(strcmp(command,GET_AUDIO) == 0){
+            else if(strcmp(command,GET_AUDIO) == 0){
                 char* audio_path = getPath(buffer);
                 if(audio_path == NULL){
                     send(socket_num ,AUDIO_NOT_FOUND, strlen(AUDIO_NOT_FOUND), 0 );
