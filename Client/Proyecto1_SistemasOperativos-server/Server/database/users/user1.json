@@ -1,0 +1,33 @@
+{
+  "id": "1",
+  "name": "User1",
+  "playListAccount": "1",
+  "playListArray": [
+    {
+      "id": "1",
+      "name": "Soft music",
+      "musicAccount": "1",
+      "musicList": [
+        {
+          "title": "kissStranger",
+          "artist": "DNCE",
+          "path": "database/music/kissing_strangers.mp3",
+          "duration": "03:22"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Soft music 1",
+      "musicAccount": "1",
+      "musicList": [
+        {
+          "title": "kissStranger",
+          "artist": "DNCE",
+          "path": "database/music/kissing_strangers.mp3",
+          "duration": "03:22"
+        }
+      ]
+    }
+  ]
+}
