@@ -6,20 +6,17 @@
 #include <netinet/in.h>
 #include <string.h>
 #include <pthread.h>
+#include "cJSON.c"
 #include "message.c"
 #include "user.c"
+#include "playList.c"
 #include "connections.c"
 #include "thread.c"
 
 
-
-
-
-
-
 int main(int argc, char const *argv[])
 {
-    int sockfd, newsockfd, portno, clilen,valread;
+   int sockfd, newsockfd, portno, clilen,valread;
    char buffer[126];
    struct sockaddr_in serv_addr, cli_addr;
    int n, pid;
@@ -69,7 +66,8 @@ int main(int argc, char const *argv[])
             char *userInfo = getUserInformation(userPath);
             // printf("%s\n", userInfo);
             tdata_t *data = (tdata_t *) malloc(sizeof(tdata_t));
-            data-> data= userInfo;
+            data-> data = userInfo;
+            data->path = userPath;
             data->socket = new_socket;
             data->sockfd = sockfd;
             pthread_create(&thread_id, NULL, threadFunction,(void *) data);

@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+// #include "cJSON.c"
 #include "user.c"
+#include "playList.c"
 #include <id3v2lib.h>
 
 
@@ -26,6 +28,72 @@ void addNewUser(){
 		printf("%s\n", userJson);
 	}
 	
+}
+void addPlayList(){
+	char name[25];
+	char path[25];
+	char *userJson = NULL;
+
+	printf("%s\n", "PlayList Name: ");
+	scanf("%s",name);
+	printf("%s\n", "Path user owner: ");
+	scanf("%s",path);
+
+	userJson = savePlayList(name,path);
+	if(userJson != NULL){
+		printf("%s\n", userJson);
+	}else{
+		printf("%s\n", " Play list wasn't created" );
+	}
+}
+void addMusicPlayList(){
+	char path[200];
+	int idPlayList;
+	int idMusicAudio;
+
+	printf("%s\n", "Path user owner: ");
+	scanf("%s",path);
+	printf("%s\n", "PID  play list: ");
+	scanf("%d",&idPlayList);
+	printf("%s\n", "PID  audio music: ");
+	scanf("%d",&idMusicAudio);
+
+	char *userJson = addMusicToPlayList(path,idPlayList,idMusicAudio);
+	if(userJson != NULL){
+		printf("%s\n", userJson);
+	}else{
+		printf("%s\n", "AudioMusic have not added into play list" );
+	}
+}
+void addMusic(){
+	/*
+	"id" : 1,
+		"title":	"kissStranger",
+		"artist":	"DNCE",
+		"path":	"database/music/kissing_strangers.mp3",
+		"duration":	"03:22"*/
+	char title[50];
+	char artist[50];
+	char path[200];
+	char pathImage[200];
+	char duration[10];
+
+	printf("%s", "Title: ");
+	scanf("%s",title);
+	printf("%s", "Artist: ");
+	scanf("%s",artist);
+	printf("%s", "Path Image: ");
+	scanf("%s",pathImage);
+	printf("%s", "Path: ");
+	scanf("%s",path);
+	printf("%s", "Duration: ");
+	scanf("%s",duration);
+	char *result = addNewMusic(title,artist,pathImage,path,duration);
+	if(result != NULL){
+		printf("%s\n", result);
+	}else{
+		printf("%s\n", "AudioMusic have not added into music repository" );
+	}
 }
 
 int main(int argc, char *argv[])
@@ -65,16 +133,25 @@ int main(int argc, char *argv[])
 
     printf("-----***JukeOS Editor***-----\n");
     while(flag){
-    	printf("Press the option: \n%s\n%s\n","Add new user: 1","Exit: 2");
+    	printf("Press the option: \n%s\n%s\n","Add new user: 1 \n Add PlayList: 2 \n Add Music : 3 \n Add MusictoPlayList: 4","Exit: 3");
     	scanf("%d",&selectedOption);
     	printf("%d\n",selectedOption );
     	switch(selectedOption) {
 		   case 1:
-		      addNewUser();
-		      break; 
-		   case 2 :
-		      flag = 0;
-		      break;
+		      	addNewUser();
+		     	break;
+		    case 2 :
+		     	addPlayList();
+		     	break; 
+		    case 3 :
+		      	addMusic();
+		     	break; 
+		    case 4:
+				addMusicPlayList();
+		      	break; 
+		   case  5:
+		      	flag = 0;
+		      	break;
 		   default : 
 		   	printf("%s\n","Invalid option");
 		}

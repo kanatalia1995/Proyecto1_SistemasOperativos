@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
-#include "cJSON.c"
+// #include "cJSON.c"
 #include <string.h>
 #include <stdio.h>
 #include "tools.c"
@@ -138,6 +138,7 @@ char *saveUserInformation(char* pName, char* pPass,char* pPath){
         return NULL;
     }
 }
+
 char *getUserInformation(char* path){
     return openJSONFile(path);
 }

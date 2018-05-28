@@ -1,0 +1,38 @@
+{
+	"musicAccount":	1,
+	"musicList":	[{
+			"id":	1,
+			"title":	"kissStranger",
+			"artist":	"DNCE",
+			"path":	"database/music/kissing_strangers.mp3",
+			"duration":	"03:22"
+		}, {
+			"id":	2,
+			"title":	"qwsdqsd",
+			"artist":	"d",
+			"pathImage":	"wd",
+			"path":	"wdw",
+			"duration":	"wd"
+		}, {
+			"id":	3,
+			"title":	"adasd",
+			"artist":	"asdasd",
+			"pathImage":	"asdasd",
+			"path":	"asdas",
+			"duration":	"adas"
+		}, {
+			"id":	4,
+			"title":	"asa",
+			"artist":	"asa",
+			"pathImage":	"as",
+			"path":	"as",
+			"duration":	"asas"
+		}, {
+			"id":	5,
+			"title":	"Hola",
+			"artist":	"amigo",
+			"pathImage":	"jala",
+			"path":	"jadaj",
+			"duration":	"adja"
+		}]
+}

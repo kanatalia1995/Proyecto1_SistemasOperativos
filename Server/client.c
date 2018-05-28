@@ -80,13 +80,21 @@ int main(int argc, char const *argv[])
     }
     char * dataInfo = "{\"user\": \"User1\" ,\"password\": \"pass1\" }"; 
     send(sock , dataInfo , strlen(dataInfo) , 0 );
+    int size ;
+    valread = read( sock , &size, sizeof(int));
     printf("From server: message was sent\n");
-    valread = read( sock , buffer, 1024);
+    char buffer_info[size];
+    valread = read( sock , buffer, size);
     printf("%s\n",buffer );
+    printf("%s\n","SAVING IMAGE FILE" );
     saveImageFile(sock);
+    printf("%s\n","SAVING MP3 FILE");
     saveMp3File(sock);
+    send(sock,"{\"command\": \"CREATE_PLAYLIST\",\"name\": \"Play List 1\"}",strlen("{\"command\": \"CREATE_PLAYLIST\",\"name\": \"Play List 1\"}"),0);
+    char buffer_playlist[256];
+    valread = read( sock , buffer_playlist, 256);
+    printf("%s\n",buffer_playlist);
     send(sock,"{\"command\": \"EXIT\"}",strlen("{\"command\": \"EXIT\"}"),0);
-    // valread = read( sock , buffer, 1024);
-    // printf("%s\n",buffer);
+    
     return 0;
 }

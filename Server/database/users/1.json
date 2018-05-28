@@ -1,6 +1,11 @@
 {
 	"id":	"1",
 	"name":	"1",
-	"playListAccount":	0,
-	"playListArray":	[]
+	"playListAccount":	1,
+	"playListArray":	[{
+			"id":	1,
+			"name":	"hola",
+			"musicAccount":	0,
+			"musicList":	[]
+		}]
 }

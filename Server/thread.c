@@ -4,14 +4,10 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
-// #include <pthread.h>
-// #include "cJSON.c"
-
-// #include "message.c"
-// #include "user.c"
 
 typedef struct thread_data {
  char* data;
+ char* path;
  int socket;
  int sockfd;
 } tdata_t; 
@@ -23,6 +19,7 @@ void *sendMp3Stream(char *path){
     FILE* file;
     char *buffer;
     char *buffer_message;
+    // printf("path mp3%s\n", path  );
     if( access(path, F_OK) == -1 ){
         char metadata[] =  ERROR_OPEN_AUDIO_FILE;
         char * message = strcat(metadata, path);
@@ -34,31 +31,15 @@ void *sendMp3Stream(char *path){
         fseek(file, 0, SEEK_END);
         int length = ftell(file);
         send(socket_num,&length,sizeof(int),0); // SEND SIZE FIRST NOTE:send all file information
-        printf("%d\n",length );
+        // printf("lenght file%d\n",length );
         fseek(file, 0, SEEK_SET);
         buffer = malloc (256);
-        // buffer_message = malloc(strlen(GET_BYTES));
-        // int val ;
-        // int flag = 1;
-        // while (flag){
-        //     val = read( socket_num, buffer_message, strlen(GET_BYTES));
-        //     printf("%s\n",buffer_message );
-        //     if(strcmp(buffer_message,GET_BYTES)== 0){
-        //         int rval = fread(buffer, 1, sizeof(256), file);
-        //         send(socket_num, buffer, rval, 0);
-        //     }
-        //     if(feof(file)){
-        //         flag = 0;
-        //     }
-            
-        // }
         while (!feof(file)){
             int rval = fread(buffer, 1, sizeof(256), file);
             send(socket_num, buffer, rval, 0);
-            printf("%d\n", rval);
+            // printf("%d\n", rval);
         }
         fclose(file);
-        // send(socket_num, buffer, length, 0);
     }
     free(buffer);
 }
@@ -66,7 +47,15 @@ void *sendMp3Stream(char *path){
 
 char *getCommandFromJson(char* json){
     cJSON *data = cJSON_Parse(json);
-    if(data == NULL) return NULL;
+    if (data == NULL){
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL){
+                fprintf(stderr, "Error before: %s\n", error_ptr);
+                // log
+                free(data);
+                return "ERROR PARSING FILE";
+        }
+    }
     cJSON *command = cJSON_GetObjectItemCaseSensitive(data, "command");
     cJSON *command_instance = cJSON_CreateString(command->valuestring);
     cJSON_Delete(data);
@@ -89,47 +78,74 @@ void sendImageData(char *path){
         send(socket_num,&length,sizeof(int),0);
         fseek(file, 0, SEEK_SET);
         buffer = malloc (256);
-        /*FILE *file = fopen(filename, "rb");
-            err_abort("Test");
-            while (!feof(file))
-            {
-                int rval = fread(buf, 1, sizeof(buf), file);
-                send(sock, buf, rval, 0);
-            }
-        */
         while (!feof(file)){
             int rval = fread(buffer, 1, sizeof(256), file);
             send(socket_num, buffer, rval, 0);
         }
         fclose(file);
-        // send(socket_num, buffer, length, 0);
     }
     free(buffer);
 }
 
+char *getName(char* json){
+    cJSON *data = cJSON_Parse(json);
+    if (data == NULL){
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL){
+                fprintf(stderr, "Error before: %s\n", error_ptr);
+                // log
+                free(data);
+                return "ERROR PARSING FILE";
+        }
+    }
+    cJSON *name = cJSON_GetObjectItemCaseSensitive(data, "name");
+    cJSON *name_instance = cJSON_CreateString(name->valuestring);
+    cJSON_Delete(data);
+    return name_instance->valuestring;
+}
 char *getPath(char* json){
     cJSON *data = cJSON_Parse(json);
-    if(data == NULL) return NULL;
+    if (data == NULL){
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL){
+                fprintf(stderr, "Error before: %s\n", error_ptr);
+                // log
+                free(data);
+                return "ERROR PARSING FILE";
+        }
+    }
     cJSON *path = cJSON_GetObjectItemCaseSensitive(data, "path");
     cJSON *path_instance = cJSON_CreateString(path->valuestring);
     cJSON_Delete(data);
     return path_instance->valuestring;
 }
 
+//PLAY LIST SERVICE
+
+
+
 
 void *threadFunction(void *threadArg) {
     tdata_t *data = (tdata_t *) threadArg;
     // close(data->sockfd);
     char *user_json = data->data;
+    char *pathUser = data->path;
+    if (pathUser == NULL){
+        printf("%s\n", "error");
+    }
+    // printf("pathUser%s\n",pathUser );
     socket_num = data->socket;
     int flag = 1;
     int valread;
-    char buffer[124] = {0};
+    char buffer[1024] = {0};
+    int sizeJson = strlen(user_json);
     // printf("%s\n",user_json );
+    send(socket_num ,&sizeJson, sizeof(int) , 0 );
     send(socket_num , user_json, strlen(user_json) , 0 ); //Send all user information
     while(flag){
-        valread = read( socket_num, buffer, 124);
+        valread = read( socket_num, buffer, 1024);
         char* command = getCommandFromJson(buffer);
+        // printf("command%s\n", command );
         if (command== NULL){
            send(socket_num ,INVALID_OPTION_FORMAT, strlen(INVALID_OPTION_FORMAT), 0 ); 
         }else {
@@ -149,15 +165,34 @@ void *threadFunction(void *threadArg) {
             //AUDIO FILE
             else if(strcmp(command,GET_AUDIO) == 0){
                 char* audio_path = getPath(buffer);
+                printf("asadsa%s\n",audio_path );
                 if(audio_path == NULL){
                     send(socket_num ,AUDIO_NOT_FOUND, strlen(AUDIO_NOT_FOUND), 0 );
                 }else{
                     sendMp3Stream(audio_path);
                 }
-            }else {
+            }
+            //CREATE NEW USER PLAY LIST
+            else if(strcmp(command,CREATE_PLAYLIST) == 0){
+                char* playListName = getName(buffer);
+                if(playListName == NULL){
+                    send(socket_num ,PLAYLIST_NAME_ERROR, strlen(PLAYLIST_NAME_ERROR), 0 );
+                }else{
+                    char *result = savePlayList(playListName,pathUser);
+                    if (result == NULL) {
+                         send(socket_num ,PLAYLIST_CREATE_ERROR, strlen(PLAYLIST_CREATE_ERROR), 0 );
+                         //LOGGER
+                    }else{
+                        send(socket_num ,PLAYLIST_WAS_CREATED, strlen(PLAYLIST_WAS_CREATED), 0 );
+                    }
+                    
+                }
+            }
+            else {
                 send(socket_num ,UNKNOW_OPTION, strlen(UNKNOW_OPTION), 0 );
             }
         }
+        // buffer = {0};
         
     }
     free(user_json);
