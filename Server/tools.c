@@ -9,7 +9,7 @@
 // https://stackoverflow.com/questions/8272319/how-can-i-return-file-contents-from-a-function
 
 char *openJSONFile(char* path){
-	char *buffer = 0;
+	    char *buffer = 0;
         long length;
         FILE *f = fopen (path, "r");
         if (f)
@@ -25,6 +25,7 @@ char *openJSONFile(char* path){
             }
             fclose (f);
         }
+        
         // printf("JSON FILE%s\n",buffer);
         return buffer;
 }

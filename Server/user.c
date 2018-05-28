@@ -39,7 +39,7 @@ char *getPathUser(char* pUserName,char* pUserPass,char* data){
     }
 	end:
 	    cJSON_Delete(user_json);
-        free(data);
+        // free(data);
         if(pathString == NULL) return NULL;
 	    printf("%s\n", pathString);
 	    return pathString;

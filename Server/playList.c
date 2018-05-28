@@ -46,14 +46,14 @@ char *savePlayList(char* pName, char* pPath){
     cJSON_AddItemToArray(playListArray,playList);
     if( saveJsonFile(cJSON_Print(user),pPath) == 1){
         char *string =  cJSON_Print(playList);
-        free(data);
+        // free(data);
         cJSON_Delete(user);
-        free(playList);
+        // free(playList);
         return string;
     }else{
-        free(data);
+        // free(data);
         cJSON_Delete(user);
-        free(playList);
+        // free(playList);
         return NULL;
     }
 
@@ -71,7 +71,7 @@ char *addMusicToPlayList(char *pPathUser,int playListId,int musicId){
         const char *error_ptr = cJSON_GetErrorPtr();
         if (error_ptr != NULL){
                 fprintf(stderr, "Error before: %s\n", error_ptr);
-                free(data);
+                // free(data);
                 return NULL;
         }
     }
@@ -86,21 +86,21 @@ char *addMusicToPlayList(char *pPathUser,int playListId,int musicId){
                 cJSON *musicList = cJSON_GetObjectItemCaseSensitive(playList, "musicList");
                 cJSON_AddItemToArray(musicList,music);
                 if( saveJsonFile(cJSON_Print(user),pPathUser) == 1){
-                    free(data);
+                    // free(data);
                     cJSON_Delete(user);
                     // ;
                     return "MUSIC ADDED ";
                 }else{
-                    free(data);
+                    // free(data);
                     cJSON_Delete(user);
-                    free(playList);
+                    // free(playList);
                     return NULL;
                 }
                 return cJSON_Print (music);
             }
         }
     }
-    free(data);
+    // free(data);
     cJSON_Delete(user);
     return NULL;
 

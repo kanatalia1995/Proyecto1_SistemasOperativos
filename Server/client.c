@@ -8,11 +8,14 @@
 #include "tools.c"
 
 void saveImageFile(int sock){
-    send(sock,"{\"command\": \"GET_IMAGE\",\"path\":\"database/music/images/kissing_strangers.jpg\"}",strlen("{\"command\": \"GET_IMAGE\",\"path\":\"database/music/images/kissing_strangers.jpg\"}"),0);
+    char path[] = "{\"command\": \"GET_IMAGE\",\"path\":\"database/music/images/kissing_strangers.jpg\"}";
+    int size_send= strlen(path);
+    send(sock,&size_send,sizeof(int),0);
+    send(sock,"{\"command\": \"GET_IMAGE\",\"path\":\"database/music/images/kissing_strangers.jpg\"}",size_send,0);
     int size_image = 0;
-    int valread = read(sock, &size_image,sizeof(int));
+    int valread = read(sock, &size_image,sizeof(int),0);
 
-    char *buffer_image = malloc(256);
+    char buffer_image[256] = {0};
     FILE *file = fopen("database/music/images/kissing_strangerscopy.jpg", "wb");
     int rval;
     while ( size_image > 0){
@@ -25,15 +28,16 @@ void saveImageFile(int sock){
     // valread = read(sock, buffer_image,size_image);
     // printf("%s\n", buffer_image );
     // saveImageFile(buffer_image,"database/music/images/kissing_strangerscopy.jpg");
-    free(buffer_image);
+    // free(buffer_image);
 }
 void saveMp3File(int sock){
     char path[] = "{\"command\": \"GET_AUDIO\",\"path\":\"database/music/kissing_strangers.mp3\"}";
-    send(sock, "{\"command\": \"GET_AUDIO\",\"path\":\"database/music/kissing_strangers.mp3\"}",strlen( "{\"command\": \"GET_AUDIO\",\"path\":\"database/music/kissing_strangers.mp3\"}"),0);
+    int size_send= strlen(path);
+    send(sock,&size_send,sizeof(int),0);
+    send(sock, "{\"command\": \"GET_AUDIO\",\"path\":\"database/music/kissing_strangers.mp3\"}",size_send,0);
     int size_audio = 0;
     int valread = read(sock, &size_audio,sizeof(int));
-
-    char *buffer_audio = malloc(256);
+    char buffer_audio[256] = {0};
     FILE *file = fopen("database/music/kissing_strangerscopy.mp3", "wb");
     int rval;
     while ( size_audio > 0){
@@ -46,7 +50,7 @@ void saveMp3File(int sock){
     // valread = read(sock, buffer_image,size_image);
     // printf("%s\n", buffer_image );
     // saveImageFile(buffer_image,"database/music/images/kissing_strangerscopy.jpg");
-    free(buffer_audio);
+    // free(buffer_audio);
 }
 int main(int argc, char const *argv[])
 {
@@ -79,22 +83,29 @@ int main(int argc, char const *argv[])
         return -1;
     }
     char * dataInfo = "{\"user\": \"User1\" ,\"password\": \"pass1\" }"; 
-    send(sock , dataInfo , strlen(dataInfo) , 0 );
-    int size ;
-    valread = read( sock , &size, sizeof(int));
+    int size_send= strlen(dataInfo);
+    // printf("size_send%d\n",size_send);
+    send(sock,&size_send,sizeof(int),0);
+    send(sock , dataInfo ,size_send, 0 );
+    int size_read;
+    valread = read( sock , &size_read, sizeof(int));
     printf("From server: message was sent\n");
-    char buffer_info[size];
-    valread = read( sock , buffer, size);
-    printf("%s\n",buffer );
-    printf("%s\n","SAVING IMAGE FILE" );
+    char buffer_user[size_read];
+    valread = read( sock , buffer_user, size_read);
+    printf("%s\n",buffer_user );
+    printf("%s\n","SAVING IMAGE FILE..." );
     saveImageFile(sock);
-    printf("%s\n","SAVING MP3 FILE");
+    printf("%s\n","SAVING MP3 FILE...");
     saveMp3File(sock);
-    send(sock,"{\"command\": \"CREATE_PLAYLIST\",\"name\": \"Play List 1\"}",strlen("{\"command\": \"CREATE_PLAYLIST\",\"name\": \"Play List 1\"}"),0);
-    char buffer_playlist[256];
+    size_send= strlen("{\"command\": \"CREATE_PLAYLIST\",\"name\": \"Play List 1\"}");
+    send(sock,&size_send,sizeof(int),0);
+    send(sock,"{\"command\": \"CREATE_PLAYLIST\",\"name\": \"Play List 1\"}",size_send,0);
+    valread = read( sock , &size_read, sizeof(int),0);
+    char buffer_playlist[size_read];
     valread = read( sock , buffer_playlist, 256);
     printf("%s\n",buffer_playlist);
-    send(sock,"{\"command\": \"EXIT\"}",strlen("{\"command\": \"EXIT\"}"),0);
-    
+    size_send= strlen("{\"command\": \"EXIT\"}");
+    send(sock,&size_send,sizeof(int),0);
+    send(sock,"{\"command\": \"EXIT\"}",size_send,0);
     return 0;
 }

@@ -17,7 +17,6 @@
 int main(int argc, char const *argv[])
 {
    int sockfd, newsockfd, portno, clilen,valread;
-   char buffer[126];
    struct sockaddr_in serv_addr, cli_addr;
    int n, pid;
    
@@ -51,16 +50,22 @@ int main(int argc, char const *argv[])
    listen(sockfd,5);
    clilen = sizeof(cli_addr);
    int new_socket;
+   int errorSize;
    
    while (1) {
         new_socket = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
         //User validation
-        valread = read( new_socket , buffer, 126); // receive user information like json;
-        printf("%s\n",buffer );// INSERT LOG
+        int init ;
+        valread = read( new_socket ,&init, sizeof(int)); // get Message size
+        char buffer[init];
+        valread = read( new_socket ,buffer,init);
+        // printf("%s\n",buffer );// INSERT LOG
         char *userPath = validateConnection(buffer);
         if (userPath == NULL){
             printf(INVALID_USER);//LOg
-            send(new_socket , INVALID_USER , strlen(INVALID_USER) , 0 );
+            errorSize = strlen(INVALID_USER);
+            send(new_socket ,&errorSize , sizeof(int) , 0 );
+            send(new_socket , INVALID_USER , errorSize, 0 );
         }else{
             pthread_t thread_id;
             char *userInfo = getUserInformation(userPath);
@@ -71,6 +76,7 @@ int main(int argc, char const *argv[])
             data->socket = new_socket;
             data->sockfd = sockfd;
             pthread_create(&thread_id, NULL, threadFunction,(void *) data);
+            //LOG MESSAGE 
             char title[50] = USER_INIT;
             char *message = strcat(title,getUserName(userInfo));
             logger(message);

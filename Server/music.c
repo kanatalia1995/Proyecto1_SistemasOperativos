@@ -37,7 +37,7 @@ char *addNewMusic(char *ptitle,char *partist,char *pPathImage, char *ppath, char
         if (error_ptr != NULL){
                 fprintf(stderr, "Error before: %s\n", error_ptr);
                 // log
-                free(data);
+                // free(data);
                 return "ERROR PARSING FILE";
         }
     }
@@ -60,7 +60,7 @@ cJSON *getAudioData(int pId){
         if (error_ptr != NULL){
                 fprintf(stderr, "Error before: %s\n", error_ptr);
                 // log
-                free(data);
+                // free(data);
                 return NULL;
         }
     }
@@ -70,12 +70,12 @@ cJSON *getAudioData(int pId){
         cJSON *id = cJSON_GetObjectItemCaseSensitive(music, "id");
         if(cJSON_IsNumber(id)){
             if (id->valueint == pId){
-                free(data);
+                // free(data);
                 return music;
             }
         }
     }
-    free(data);
+    // free(data);
     cJSON_Delete(musicList);
     return NULL;
 
@@ -90,7 +90,7 @@ char *getAudioImagePath(int pId){
         if (error_ptr != NULL){
                 fprintf(stderr, "Error before: %s\n", error_ptr);
                 // log
-                free(data);
+                // free(data);
                 return NULL;
         }
     }
@@ -107,7 +107,7 @@ char *getAudioImagePath(int pId){
             }
         }
     }
-    free(data);
+    // free(data);
     cJSON_Delete(musicList);
     return NULL;
 
@@ -122,7 +122,7 @@ char *getAudioPath(int pId){
         if (error_ptr != NULL){
                 fprintf(stderr, "Error before: %s\n", error_ptr);
                 // log
-                free(data);
+                // free(data);
                 return NULL;
         }
     }
@@ -139,7 +139,7 @@ char *getAudioPath(int pId){
             }
         }
     }
-    free(data);
+    // free(data);
     cJSON_Delete(musicList);
     return NULL;
 
