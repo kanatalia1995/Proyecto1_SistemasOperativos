@@ -7,10 +7,23 @@ package client.Interfaces;
 
 ;
 
+import client.Connection;
+import static client.Connection.ConnectToServer;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//import com.google.gson.Gson;
 
 /**
  *
@@ -40,15 +53,21 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         fld_username = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        fld_password = new javax.swing.JTextField();
         btn_login = new javax.swing.JButton();
+        lbl_state_connection = new javax.swing.JLabel();
+        btn_connect = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         fld_username.setToolTipText("👤 Username");
 
-        jTextField2.setToolTipText("🔑 Password");
+        fld_password.setToolTipText("🔑 Password");
 
         btn_login.setText("Login");
         btn_login.setToolTipText("");
@@ -58,57 +77,150 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        lbl_state_connection.setText("Waiting connection");
+
+        btn_connect.setText("Connect");
+        btn_connect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_connectActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Username");
+
+        jLabel2.setText("Password");
+
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 48)); // NOI18N
+        jLabel3.setText("jukeb");
+
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 70)); // NOI18N
+        jLabel4.setText("OS");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(btn_connect)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbl_state_connection)
+                .addGap(73, 73, 73))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fld_username)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(btn_login)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(130, 130, 130))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fld_password, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(btn_login))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jLabel2))
+                            .addComponent(fld_username, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fld_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fld_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_login)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(lbl_state_connection)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_connect)
+                .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private void TryConnectToServer() {
+        // Disable buttons and textfields
+        fld_username.enable(false);
+        fld_username.repaint();
+        fld_password.enable(false);
+        fld_password.repaint();
+        btn_login.show(false);
+        btn_connect.show(false);
+        
+        try{
+            if (ConnectToServer()){
+                lbl_state_connection.setText("Conectado");
+                fld_username.enable(true);
+                fld_password.enable(true);
+                btn_login.show(true);
+                btn_connect.show(false);
+            }else{
+                lbl_state_connection.setText("Error al conectar");
+                btn_connect.show(true);
+            }
+        }catch(Exception e){
+            lbl_state_connection.setText("Error al conectar");
+        }
+    }
+    
     private void configureWindow() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (int) ((dimension.getWidth() - this.getWidth()) / 2);
         int y = (int) ((dimension.getHeight() - this.getHeight()) / 2);
         this.setLocation(x, y);
         
-        this.getContentPane().setBackground(dark_gray_1);
+        TryConnectToServer();
+        
     }
-    private boolean VerifyLoginData(){
+    
+    private boolean VerifyLoginData() throws IOException{
+        String username = fld_username.getText();
+        String password = fld_password.getText();
+        
+        Connection.sendDataLogin(username, password);
+        
+        
         return true;
     }
     
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
-        if (VerifyLoginData()){
-            Interfaz interfaz = new Interfaz();
-            interfaz.setVisible(true);
-            this.setVisible(false);
+        try {
+            if (VerifyLoginData()){
+                Interface interfaz = new Interface();
+                interfaz.setVisible(true);
+                this.setVisible(false);
+                lbl_state_connection.setText("Sí se pudo iniciar sesion");            }
+        } catch (IOException ex) {
+            lbl_state_connection.setText("No se pudo iniciar sesion");
+            //Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void btn_connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_connectActionPerformed
+        // TODO add your handling code here:
+        TryConnectToServer();
+    }//GEN-LAST:event_btn_connectActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,9 +258,15 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_connect;
     private javax.swing.JButton btn_login;
+    private javax.swing.JTextField fld_password;
     private javax.swing.JTextField fld_username;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel lbl_state_connection;
     // End of variables declaration//GEN-END:variables
 
     

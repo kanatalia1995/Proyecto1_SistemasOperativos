@@ -1,6 +1,7 @@
 package client;
 
-import client.Interfaces.*;
+import static client.Connection.ConnectToServer;
+import client.Interfaces.Login;
 import java.io.IOException;
 
 /**
@@ -20,10 +21,10 @@ public class Client {
     
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        
+        ConnectToServer();
         OpenInterfaz();
         
-        System.out.println("Listo :)");
+        // System.out.println("Listo :)");
         
     }
     
