@@ -7,10 +7,14 @@ package client.Interfaces;
 
 ;
 
+import controllers.LoginController;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,6 +28,7 @@ public class Login extends javax.swing.JFrame {
     
     Color dark_gray_1 = new Color(45,45,45);
     Color dark_gray_2 = new Color(48,48,48);
+    private LoginController controller;
     
     public Login() {
         initComponents();
@@ -39,16 +44,26 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        fld_username = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        userText = new javax.swing.JTextField();
+        passText = new javax.swing.JTextField();
         btn_login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        fld_username.setToolTipText("👤 Username");
+        userText.setToolTipText("👤 Username");
+        userText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userTextActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setToolTipText("🔑 Password");
+        passText.setToolTipText("🔑 Password");
+        passText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passTextActionPerformed(evt);
+            }
+        });
 
         btn_login.setText("Login");
         btn_login.setToolTipText("");
@@ -67,8 +82,8 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fld_username)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)))
+                            .addComponent(userText)
+                            .addComponent(passText, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(120, 120, 120)
                         .addComponent(btn_login)))
@@ -78,9 +93,9 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(159, 159, 159)
-                .addComponent(fld_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_login)
                 .addContainerGap(168, Short.MAX_VALUE))
@@ -98,9 +113,17 @@ public class Login extends javax.swing.JFrame {
         this.getContentPane().setBackground(dark_gray_1);
     }
     private boolean VerifyLoginData(){
-        return true;
+        try {
+            this.controller = new LoginController();
+            this.controller.login(userText.getText(),passText.getText());
+            return true;
+        } catch (IOException ex) {
+            System.out.print("Error in server connection");
+            
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
-    
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
         if (VerifyLoginData()){
@@ -109,6 +132,14 @@ public class Login extends javax.swing.JFrame {
             this.setVisible(false);
         }
     }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void passTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passTextActionPerformed
+
+    private void userTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,8 +178,8 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_login;
-    private javax.swing.JTextField fld_username;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField passText;
+    private javax.swing.JTextField userText;
     // End of variables declaration//GEN-END:variables
 
     

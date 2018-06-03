@@ -5,7 +5,7 @@
  */
 package client.Interfaces;
 
-import static client.Connection.*;
+import static model.Connection.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -518,6 +518,10 @@ public class Interfaz extends javax.swing.JFrame {
                 
             }
         });
+    }
+
+    private boolean ConnectToServer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -29,8 +29,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="fld_username" max="32767" attributes="0"/>
-                          <Component id="jTextField2" pref="219" max="32767" attributes="0"/>
+                          <Component id="userText" max="32767" attributes="0"/>
+                          <Component id="passText" pref="219" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -46,9 +46,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
-              <Component id="fld_username" min="-2" max="-2" attributes="0"/>
+              <Component id="userText" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+              <Component id="passText" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btn_login" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="168" max="32767" attributes="0"/>
@@ -57,15 +57,21 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="fld_username">
+    <Component class="javax.swing.JTextField" name="userText">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="\ud83d\udc64 Username" containsInvalidXMLChars="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userTextActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="passText">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="\ud83d\udd11 Password" containsInvalidXMLChars="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passTextActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_login">
       <Properties>
