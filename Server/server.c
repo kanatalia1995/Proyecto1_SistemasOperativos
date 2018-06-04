@@ -47,42 +47,25 @@ int main(int argc, char const *argv[])
       * for the incoming connection
    */
    
-   listen(sockfd,5);
+   listen(sockfd,20);
    clilen = sizeof(cli_addr);
    int new_socket;
    int errorSize;
    
    while (1) {
         new_socket = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
-        //User validation
-        int init ;
-        valread = read( new_socket ,&init, sizeof(int)); // get Message size
-        char buffer[init];
-        valread = read( new_socket ,buffer,init);
-        // printf("%s\n",buffer );// INSERT LOG
-        char *userPath = validateConnection(buffer);
-        if (userPath == NULL){
-            printf(INVALID_USER);//LOg
-            errorSize = strlen(INVALID_USER);
-            send(new_socket ,&errorSize , sizeof(int) , 0 );
-            send(new_socket , INVALID_USER , errorSize, 0 );
+        if (new_socket < 0){
+          printf("Error created new socket\n");
         }else{
-            pthread_t thread_id;
-            char *userInfo = getUserInformation(userPath);
-            // printf("%s\n", userInfo);
-            tdata_t *data = (tdata_t *) malloc(sizeof(tdata_t));
-            data-> data = userInfo;
-            data->path = userPath;
-            data->socket = new_socket;
-            data->sockfd = sockfd;
-            pthread_create(&thread_id, NULL, threadFunction,(void *) data);
-            //LOG MESSAGE 
-            char title[50] = USER_INIT;
-            char *message = strcat(title,getUserName(userInfo));
-            logger(message);
-            // close(sockfd);
-        }  
-    }
+          printf("%s %d\n", "New user in socket: ",new_socket);
+          pthread_t thread_id;
+          tdata_t *data = (tdata_t *) malloc(sizeof(tdata_t));
+          data->socket = new_socket;
+          data->sockfd = sockfd;
+          pthread_create(&thread_id, NULL, threadFunction,(void *) data);
+        }
+  }  
+
     
 }
 

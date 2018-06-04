@@ -1,5 +1,5 @@
 {
-	"id":	"1",
+	"id":	1,
 	"name":	"User1",
 	"playListAccount":	4,
 	"playListArray":	[{
@@ -7,6 +7,7 @@
 			"name":	"Soft music",
 			"musicAccount":	1,
 			"musicList":	[{
+					"id": 1,
 					"title":	"kissStranger",
 					"artist":	"DNCE",
 					"path":	"database/music/kissing_strangers.mp3",
@@ -35,6 +36,7 @@
 			"name":	"Soft music 1",
 			"musicAccount":	1,
 			"musicList":	[{
+					"id" : 1,
 					"title":	"kissStranger",
 					"artist":	"DNCE",
 					"path":	"database/music/kissing_strangers.mp3",
@@ -177,6 +179,16 @@
 			"musicList":	[]
 		}, {
 			"id":	18,
+			"name":	"Play List 1",
+			"musicAccount":	0,
+			"musicList":	[]
+		}, {
+			"id":	19,
+			"name":	"Play List 1",
+			"musicAccount":	0,
+			"musicList":	[]
+		}, {
+			"id":	20,
 			"name":	"Play List 1",
 			"musicAccount":	0,
 			"musicList":	[]

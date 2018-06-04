@@ -24,7 +24,7 @@ char *getPathUser(char* pUserName,char* pUserPass,char* data){
 
         cJSON *name = cJSON_GetObjectItemCaseSensitive(user, "name");
         cJSON *password = cJSON_GetObjectItemCaseSensitive(user, "password");
-        printf("%s\n",pUserName );
+        // printf("%s\n",pUserName );
         if(cJSON_IsString(name) && cJSON_IsString(password)){
             if ((strcmp(name->valuestring,pUserName) == 0) && (strcmp(password->valuestring,pUserPass)==0))
             {
@@ -41,7 +41,7 @@ char *getPathUser(char* pUserName,char* pUserPass,char* data){
 	    cJSON_Delete(user_json);
         // free(data);
         if(pathString == NULL) return NULL;
-	    printf("%s\n", pathString);
+	    // printf("%s\n", pathString);
 	    return pathString;
 }
 int sanitizeUserInformation(char* param, char *pUser, char *pPass){
@@ -59,16 +59,16 @@ int sanitizeUserInformation(char* param, char *pUser, char *pPass){
     } 
     strcpy(pUser,user->valuestring);
     strcpy(pPass,pass->valuestring);
-    printf("%s%s\n",pUser,pPass );
+    // printf("%s%s\n",pUser,pPass );
     return 1;
 
 }
 
-char * validateConnection(char *info){
+char * validateUser(char *info){
     char *user = (char *)malloc(50);
     char *pass = (char *)malloc(50);
     if (!sanitizeUserInformation(info,user,pass)) return NULL;
-    printf("%s%s\n",user,pass );
+    // printf("%s%s\n",user,pass );
     char * users = openJSONFile(DATABASE_USER);
     if (users == NULL) return NULL;
     return getPathUser(user,pass,users);

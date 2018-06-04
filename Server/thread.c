@@ -128,92 +128,106 @@ char *getPath(char* json){
 
 void *threadFunction(void *threadArg) {
     tdata_t *data = (tdata_t *) threadArg;
-    // close(data->sockfd);
-    char *user_json = data->data;
-    char *pathUser = data->path;
-    if (pathUser == NULL){
-        printf("%s\n", "error");
-    }
+    close(data->sockfd);
     // printf("pathUser%s\n",pathUser );
     socket_num = data->socket;
-    int flag = 1;
+    // char *user_json = data->data;
+    // char *pathUser = data->path;
+    // if (pathUser == NULL){
+    //     printf("%s\n", "error");
+    // }
+
     int valread;
-    // char buffer[1024] = {0};
-    int sizeJson = strlen(user_json);
+    int init ;
     int size_send;
-    // printf("%s\n",user_json );
-    send(socket_num ,&sizeJson, sizeof(int) , 0 );
-    send(socket_num ,user_json,sizeJson , 0 ); //Send all user information
-    while(flag){
-        valread = read( socket_num,&size_send, sizeof(int));
-        printf("size send %d\n",size_send );
-        char buffer_command[size_send];
-        valread = read( socket_num,buffer_command, size_send);
-        printf("command : %s\n", buffer_command );
-        char* command = getCommandFromJson(buffer_command);
-        printf("command : %s\n", command );
-        if (command== NULL){
-            size_send= strlen(INVALID_OPTION_FORMAT);
-            send(socket_num,&size_send,sizeof(int),0);
-            send(socket_num ,INVALID_OPTION_FORMAT, size_send, 0 ); 
-        }else {
-            //EXIT
-            if (strcmp(command, EXIT) == 0) {
-                flag = 0;
-            }
-            //IMAGEFILE
-            else if(strcmp(command,GET_IMAGE) == 0){
-                char* image_path = getPath(buffer_command);
-                if(image_path == NULL){
-                    size_send= strlen(IMAGE_NOT_FOUND);
-                    send(socket_num,&size_send,sizeof(int),0);
-                    send(socket_num ,IMAGE_NOT_FOUND, size_send, 0 );
-                }else{
-                    sendImageData(image_path);
-                }
-            }
-            //AUDIO FILE
-            else if(strcmp(command,GET_AUDIO) == 0){
-                char* audio_path = getPath(buffer_command);
-                printf("asadsa%s\n",audio_path );
-                if(audio_path == NULL){
-                    size_send= strlen(AUDIO_NOT_FOUND);
-                    send(socket_num,&size_send,sizeof(int),0);
-                    send(socket_num ,AUDIO_NOT_FOUND, size_send, 0 );
-                }else{
-                    sendMp3Stream(audio_path);
-                }
-            }
-            //CREATE NEW USER PLAY LIST
-            else if(strcmp(command,CREATE_PLAYLIST) == 0){
-                char* playListName = getName(buffer_command);
-                if(playListName == NULL){
-                    size_send= strlen(PLAYLIST_NAME_ERROR);
-                    send(socket_num,&size_send,sizeof(int),0);
-                    send(socket_num ,PLAYLIST_NAME_ERROR, size_send, 0 );
-                }else{
-                    char *result = savePlayList(playListName,pathUser);
-                    if (result == NULL) {
-                        size_send= strlen(PLAYLIST_CREATE_ERROR);
-                        send(socket_num,&size_send,sizeof(int),0);
-                        send(socket_num ,PLAYLIST_CREATE_ERROR, size_send, 0 );
-                         //LOGGER
-                    }else{
-                        size_send= strlen(PLAYLIST_WAS_CREATED);
-                        send(socket_num,&size_send,sizeof(int),0);
-                        send(socket_num ,PLAYLIST_WAS_CREATED, size_send, 0 );
-                    }
-                    
-                }
-            }
-            else {
-                send(socket_num ,UNKNOW_OPTION, strlen(UNKNOW_OPTION), 0 );
+    valread = read( socket_num,&size_send, sizeof(int));
+    printf("size send %d\n",size_send );
+    char buffer_command[size_send];
+    valread = read( socket_num,buffer_command, size_send);
+    printf("command : %s\n", buffer_command );
+    char* command = getCommandFromJson(buffer_command);
+    printf("command : %s\n", command );
+    if (command == NULL){
+        size_send= strlen(INVALID_OPTION_FORMAT);
+        send(socket_num ,INVALID_OPTION_FORMAT, size_send, 0 ); 
+    }else {
+        if(strcmp(command,LOGIN)==0){
+            char* pathUser = validateUser(buffer_command);
+            printf("Login information %s\n", pathUser);// INSERT LOG
+            if (pathUser == NULL){
+                printf(INVALID_USER);//LOg
+                int errorSize = strlen(INVALID_USER);
+                // send(socket_num ,&errorSize , sizeof(int) , 0 );
+                send(socket_num , INVALID_USER , errorSize, 0 );
+            }else{
+                char *user_json = getUserInformation(pathUser);
+                 if(user_json == NULL){
+                    printf("%s\n", "Error open user json");
+                    send(socket_num , ERROR_USER_INFORMATION , strlen(ERROR_USER_INFORMATION), 0 );
+                 }else{
+                    //LOG MESSAGE 
+                    char title[50] = USER_INIT;
+                    char *message = strcat(title,getUserName(user_json));
+                    logger(message);
+                    printf("%s\n", user_json);
+                    send(socket_num ,user_json,strlen(user_json) , 0 ); //Send all user information
+                 }
+                
             }
         }
-        // buffer = {0};
+        //IMAGEFILE
+        else if(strcmp(command,GET_IMAGE) == 0){
+            char* image_path = getPath(buffer_command);
+            if(image_path == NULL){
+                size_send= strlen(IMAGE_NOT_FOUND);
+                // send(socket_num,&size_send,sizeof(int),0);
+                send(socket_num ,IMAGE_NOT_FOUND, size_send, 0 );
+            }else{
+                sendImageData(image_path);
+            }
+        }
+        //AUDIO FILE
+        else if(strcmp(command,GET_AUDIO) == 0){
+            char* audio_path = getPath(buffer_command);
+            printf("asadsa%s\n",audio_path );
+            if(audio_path == NULL){
+                size_send= strlen(AUDIO_NOT_FOUND);
+                // send(socket_num,&size_send,sizeof(int),0);
+                send(socket_num ,AUDIO_NOT_FOUND, size_send, 0 );
+            }else{
+                sendMp3Stream(audio_path);
+            }
+        }
+        //CREATE NEW USER PLAY LIST
+        else if(strcmp(command,CREATE_PLAYLIST) == 0){
+            char* playListName = getName(buffer_command);
+            if(playListName == NULL){
+                size_send= strlen(PLAYLIST_NAME_ERROR);
+                // send(socket_num,&size_send,sizeof(int),0);
+                send(socket_num ,PLAYLIST_NAME_ERROR, size_send, 0 );
+            }else{
+                char *result = savePlayList(playListName,buffer_command);
+                if (result == NULL) {
+                    size_send= strlen(PLAYLIST_CREATE_ERROR);
+                    // send(socket_num,&size_send,sizeof(int),0);
+                    send(socket_num ,PLAYLIST_CREATE_ERROR, size_send, 0 );
+                     //LOGGER
+                }else{
+                    size_send= strlen(PLAYLIST_WAS_CREATED);
+                    // send(socket_num,&size_send,sizeof(int),0);
+                    send(socket_num ,PLAYLIST_WAS_CREATED, size_send, 0 );
+                }
+                
+            }
+        }
+        else {
+            send(socket_num ,UNKNOW_OPTION, strlen(UNKNOW_OPTION), 0 );
+        }
         
+            // buffer = {0};
     }
     // free(threadArg);
     close(socket_num);
+    pthread_exit((void*) threadArg); 
 }
 
