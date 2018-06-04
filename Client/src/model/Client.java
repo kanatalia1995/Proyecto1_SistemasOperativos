@@ -1,6 +1,6 @@
 package model;
 
-import client.Interfaces.*;
+import view.Login;
 import java.io.IOException;
 
 /**

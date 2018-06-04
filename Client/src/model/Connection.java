@@ -5,9 +5,14 @@
  */
 package model;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.net.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,38 +23,40 @@ import tools.JSON;
  */
 
 public class Connection {
-    int PORT = 8080;
-    String IP = "127.0.0.1";
-    Socket socket;
-    DataOutputStream send;
-    DataInputStream read;
+    static int PORT = 8080;
+    static String IP = "127.0.0.1";
+    static Socket socket;
+    static  PrintWriter send ;
+    static BufferedReader read;
+
     
-    public Connection(String pUser, String pPassword) throws IOException{
-        this.ConnectToServer();
-        String message = JSON.userString(pUser, pPassword);
-        this.send.writeByte(message.length());
-        this.send.writeUTF(message);
-        this.send.flush();
-        
-        System.out.println(read.readLine());
-        
-        
-    }
-    
-    public boolean ConnectToServer(){
-        try {
+    public static  Socket connectToServer() throws IOException{
             socket = new Socket(IP, PORT);
-            send = new DataOutputStream(socket.getOutputStream());
-            read = new DataInputStream(socket.getInputStream());
-            System.out.println("Client connected");
-            return true;
-        } catch (IOException ex) {
-            System.out.println("Client not connected");
-            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+            read = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            send  = new PrintWriter(socket.getOutputStream(),true);
+            return socket;
+    }
+
+    public static boolean sendMessage(String message) throws IOException {
+        send.println(message.length());
+        send.println(message);
+//        send.flush(); // Send off the data
+        return true;   
+   }
+
+    public static String readMessage() throws IOException, ClassNotFoundException {
+        String response = "";
+        String line ;
+        while((line = read.readLine())!=null){
+            response += line;
         }
+        return response ; 
     }
     
-    
+    public static void close() throws IOException{
+        send.close();
+        read.close();
+        socket.close(); 
+    }
     
 }
