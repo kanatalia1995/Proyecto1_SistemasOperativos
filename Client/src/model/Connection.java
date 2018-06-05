@@ -6,9 +6,11 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -38,7 +40,8 @@ public class Connection {
     }
 
     public static boolean sendMessage(String message) throws IOException {
-        send.println(message.length());
+//        send.println(message.length());
+//        System.out.print(message.length());
         send.println(message);
 //        send.flush(); // Send off the data
         return true;   
@@ -57,6 +60,30 @@ public class Connection {
         send.close();
         read.close();
         socket.close(); 
+    }
+
+    public static byte[] readAudioMessage() throws IOException {
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        byte bufferArray[] = new byte[512];
+        DataInputStream  read1 = new DataInputStream(socket.getInputStream());
+        for(int s; (s=read1.read(bufferArray)) != -1; )
+        {
+          buffer.write(bufferArray, 0, s);
+//          System.out.println(s);
+        }
+//        System.out.print(buffer.toString());
+        return buffer.toByteArray();
+//        int numRead;
+//        String line ;
+//        while ((numRead = read.read(bytes, 0, buf.length)) >= 0) {
+//            int offset = 0;
+//            while (offset < numRead) {
+//              offset += line.write(buf, offset, numRead - offset);
+//            }
+//         }
+//        return response ; 
+        
+        
     }
     
 }

@@ -20,7 +20,7 @@ public class Music {
 
     @Override
     public String toString() {
-        return "Music{" + "id=" + id + ", title=" + title + ", artist=" + artist + ", path=" + path + ", duration=" + duration + '}';
+        return  "id=" + id + "     title=" + title + "    artist=" + artist;
     }
     public String duration;
     

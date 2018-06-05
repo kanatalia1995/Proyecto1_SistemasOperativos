@@ -18,6 +18,7 @@ public class User {
     public String name;
     public long id;
     public ArrayList<PlayList> playlist ;
+    public String path;
     
     public User(String json) throws ParseException{
         this.playlist  = new ArrayList<>();
