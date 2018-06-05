@@ -1,0 +1,6 @@
+Time: 2018-6-5 5:57:21   COMMAND:GET_AUDIO
+Time: 2018-6-5 5:57:21   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-5 5:57:26   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-5 5:57:34   COMMAND:GET_AUDIO
+Time: 2018-6-5 5:57:34   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-5 5:57:35   SEND_AUDIO Path:Audio was sent

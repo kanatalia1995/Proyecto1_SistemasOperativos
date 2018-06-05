@@ -58,7 +58,7 @@ char *savePlayList(char* pName, char* pPath){
     }
 
 }
-char *addMusicToPlayList(char *pPathUser,int playListId,int musicId){
+char *addMusicToPlayList(char *pPathUser,int playListId,double musicId){
     cJSON *musicData = NULL; 
     cJSON *user = NULL;
     cJSON *playListArray = NULL;

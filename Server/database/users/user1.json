@@ -1,196 +1,53 @@
 {
 	"id":	1,
 	"name":	"User1",
+	"path":	"database/users/user1.json",
 	"playListAccount":	4,
 	"playListArray":	[{
 			"id":	1,
 			"name":	"Soft music",
 			"musicAccount":	1,
 			"musicList":	[{
-					"id": 1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}, {
 					"id":	1,
 					"title":	"kissStranger",
 					"artist":	"DNCE",
 					"path":	"database/music/kissing_strangers.mp3",
 					"duration":	"03:22"
 				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
+					"id":	2,
+					"title":	"Mr BrightSide",
+					"artist":	"The killers",
+					"path":	"database/music/MrBrightside_thekillers.mp3",
 					"duration":	"03:22"
 				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
+					"id":	3,
+					"title":	"Updown Funk",
+					"artist":	"Bruno Mars",
+					"path":	"database/music/updown_funk_brunoMars.mp3",
 					"duration":	"03:22"
 				}]
 		}, {
 			"id":	2,
-			"name":	"Soft music 1",
-			"musicAccount":	1,
-			"musicList":	[{
-					"id" : 1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}]
-		}, {
-			"id":	3,
-			"name":	"Nmae1",
+			"name":	"Light music",
 			"musicAccount":	0,
 			"musicList":	[{
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
+					"id":	2,
+					"title":	"Mr BrightSide",
+					"artist":	"The killers",
+					"path":	"database/music/MrBrightside_thekillers.mp3",
 					"duration":	"03:22"
 				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
+					"id":	3,
+					"title":	"Updown Funk",
+					"artist":	"Bruno Mars",
+					"path":	"database/music/updown_funk_brunoMars.mp3",
 					"duration":	"03:22"
 				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
+					"id":	3,
+					"title":	"Updown Funk",
+					"artist":	"Bruno Mars",
+					"path":	"database/music/updown_funk_brunoMars.mp3",
 					"duration":	"03:22"
 				}]
-		}, {
-			"id":	4,
-			"name":	"playLIs1",
-			"musicAccount":	0,
-			"musicList":	[{
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}, {
-					"id":	1,
-					"title":	"kissStranger",
-					"artist":	"DNCE",
-					"path":	"database/music/kissing_strangers.mp3",
-					"duration":	"03:22"
-				}]
-		}, {
-			"id":	5,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	6,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	7,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	8,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	9,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	10,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	11,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	12,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	13,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	14,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	15,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	16,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	17,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	18,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	19,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
-		}, {
-			"id":	20,
-			"name":	"Play List 1",
-			"musicAccount":	0,
-			"musicList":	[]
 		}]
 }

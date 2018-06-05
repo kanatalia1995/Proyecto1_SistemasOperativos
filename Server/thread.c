@@ -15,6 +15,14 @@ typedef struct thread_data {
 int socket_num; //GLOBAL SOCKET VALUE
 
 
+void sendLog(char* message, char* meta){
+    char title[150];
+    strcpy(title,meta);
+    char* res = strcat(title,message);
+    logger(res);
+}
+
+
 void *sendMp3Stream(char *path){
     FILE* file;
     
@@ -25,22 +33,23 @@ void *sendMp3Stream(char *path){
         char * message = strcat(metadata, path);
         logger(message);
         size_send= strlen(ERROR_OPEN_AUDIO_FILE);
-        send(socket_num,&size_send,sizeof(int),0);
+        // send(socket_num,&size_send,sizeof(int),0);
         send(socket_num, ERROR_OPEN_AUDIO_FILE,size_send, 0);
     }
     else{
         file = fopen(path,"rb");
         fseek(file, 0, SEEK_END);
         int length = ftell(file);
-        send(socket_num,&length,sizeof(int),0); // SEND SIZE FIRST NOTE:send all file information
+        // send(socket_num,&length,sizeof(int),0); // SEND SIZE FIRST NOTE:send all file information
         // printf("lenght file%d\n",length );
-        char buffer[256] = {0};
+        char buffer[512] = {0};
         fseek(file, 0, SEEK_SET);
         while (!feof(file)){
-            int rval = fread(buffer, 1, sizeof(256), file);
+            int rval = fread(buffer, 1, sizeof(512), file);
             send(socket_num, buffer, rval, 0);
             // printf("%d\n", rval);
         }
+        sendLog("Audio was sent",SEND_AUDIO);
         fclose(file);
     }
     // free(buffer);
@@ -90,7 +99,7 @@ void sendImageData(char *path){
     }
 }
 
-char *getName(char* json){
+char *getName(char* json, char* value){
     cJSON *data = cJSON_Parse(json);
     if (data == NULL){
         const char *error_ptr = cJSON_GetErrorPtr();
@@ -100,11 +109,28 @@ char *getName(char* json){
                 return "ERROR PARSING FILE";
         }
     }
-    cJSON *name = cJSON_GetObjectItemCaseSensitive(data, "name");
+    cJSON *name = cJSON_GetObjectItemCaseSensitive(data, value);
     cJSON *name_instance = cJSON_CreateString(name->valuestring);
     cJSON_Delete(data);
     return name_instance->valuestring;
 }
+
+int  getNameInteger(char* json, char* value){
+    cJSON *data = cJSON_Parse(json);
+    if (data == NULL){
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL){
+                fprintf(stderr, "Error before: %s\n", error_ptr);
+                // log
+                return -1 ;
+        }
+    }
+    cJSON *name = cJSON_GetObjectItemCaseSensitive(data, value);
+    cJSON *name_instance = cJSON_CreateNumber(name->valueint);
+    cJSON_Delete(data);
+    return name_instance->valueint;
+}
+
 char *getPath(char* json){
     cJSON *data = cJSON_Parse(json);
     if (data == NULL){
@@ -121,6 +147,7 @@ char *getPath(char* json){
     return path_instance->valuestring;
 }
 
+
 //PLAY LIST SERVICE
 
 
@@ -128,37 +155,34 @@ char *getPath(char* json){
 
 void *threadFunction(void *threadArg) {
     tdata_t *data = (tdata_t *) threadArg;
-    close(data->sockfd);
-    // printf("pathUser%s\n",pathUser );
     socket_num = data->socket;
-    // char *user_json = data->data;
-    // char *pathUser = data->path;
-    // if (pathUser == NULL){
-    //     printf("%s\n", "error");
-    // }
 
     int valread;
     int init ;
-    int size_send;
-    valread = read( socket_num,&size_send, sizeof(int));
+    int size_send = 1024;
+    int try =3;
+
     printf("size send %d\n",size_send );
     char buffer_command[size_send];
     valread = read( socket_num,buffer_command, size_send);
-    printf("command : %s\n", buffer_command );
+    // printf("data : %s\n", buffer_command );
     char* command = getCommandFromJson(buffer_command);
     printf("command : %s\n", command );
+    sendLog(command,COMMAND);
+
     if (command == NULL){
         size_send= strlen(INVALID_OPTION_FORMAT);
         send(socket_num ,INVALID_OPTION_FORMAT, size_send, 0 ); 
     }else {
         if(strcmp(command,LOGIN)==0){
             char* pathUser = validateUser(buffer_command);
-            printf("Login information %s\n", pathUser);// INSERT LOG
+            sendLog(pathUser,USER_INIT);
             if (pathUser == NULL){
                 printf(INVALID_USER);//LOg
                 int errorSize = strlen(INVALID_USER);
                 // send(socket_num ,&errorSize , sizeof(int) , 0 );
                 send(socket_num , INVALID_USER , errorSize, 0 );
+                sendLog("No found path",INVALID_USER);
             }else{
                 char *user_json = getUserInformation(pathUser);
                  if(user_json == NULL){
@@ -189,7 +213,7 @@ void *threadFunction(void *threadArg) {
         //AUDIO FILE
         else if(strcmp(command,GET_AUDIO) == 0){
             char* audio_path = getPath(buffer_command);
-            printf("asadsa%s\n",audio_path );
+            sendLog(audio_path,SEND_AUDIO);
             if(audio_path == NULL){
                 size_send= strlen(AUDIO_NOT_FOUND);
                 // send(socket_num,&size_send,sizeof(int),0);
@@ -200,25 +224,80 @@ void *threadFunction(void *threadArg) {
         }
         //CREATE NEW USER PLAY LIST
         else if(strcmp(command,CREATE_PLAYLIST) == 0){
-            char* playListName = getName(buffer_command);
+            char* playListName = getName(buffer_command,"playListName");
+            char* path = getName(buffer_command,"path");
+            // char* path = getPathUserString(nameUser,get)
             if(playListName == NULL){
-                size_send= strlen(PLAYLIST_NAME_ERROR);
+                // size_send= strlen(PLAYLIST_NAME_ERROR);
                 // send(socket_num,&size_send,sizeof(int),0);
+                sendLog("Empty play list name",CREATE_PLAYLIST );
                 send(socket_num ,PLAYLIST_NAME_ERROR, size_send, 0 );
             }else{
-                char *result = savePlayList(playListName,buffer_command);
+                char *result = savePlayList(playListName,path);
                 if (result == NULL) {
                     size_send= strlen(PLAYLIST_CREATE_ERROR);
                     // send(socket_num,&size_send,sizeof(int),0);
+
                     send(socket_num ,PLAYLIST_CREATE_ERROR, size_send, 0 );
+                    sendLog(PLAYLIST_CREATE_ERROR,CREATE_PLAYLIST );
                      //LOGGER
                 }else{
-                    size_send= strlen(PLAYLIST_WAS_CREATED);
+                    size_send= strlen(result);
                     // send(socket_num,&size_send,sizeof(int),0);
-                    send(socket_num ,PLAYLIST_WAS_CREATED, size_send, 0 );
+                    send(socket_num ,result, size_send, 0 );
+                    sendLog("Play List was created",CREATE_PLAYLIST );
                 }
                 
             }
+        }
+        //GET_ALL_SONGS
+        else if (strcmp(command,GET_ALL_SONGS) == 0){
+            char* music = openJSONFile("database/music/musicLibrary.json");
+            if(music == NULL){
+                
+                size_send= strlen(ERROR_OPEN_MUSIC_FILE);
+                    // send(socket_num,&size_send,sizeof(int),0);
+                send(socket_num ,ERROR_OPEN_MUSIC_FILE, size_send, 0 );
+                sendLog("Database error",ERROR_OPEN_MUSIC_FILE );
+            }else{
+                size_send= strlen(music);
+                    // send(socket_num,&size_send,sizeof(int),0);
+                // printf("%s\n", music  );
+                send(socket_num ,music, size_send, 0 ); 
+                sendLog("Consult sucessful",GET_ALL_SONGS );  
+
+            }         
+        }
+        /*
+        json.put("command", "MATCH_MUSIC_PLAYLIST");
+        json.put("music", JSON.musicToJson(music));
+        json.put("path", user);
+        json.put("playListId", id);*/
+        else if(strcmp(command,MATCH_MUSIC_PLAYLIST) == 0){
+            int music = getNameInteger(buffer_command,"musicId");
+            char* path = getName(buffer_command,"path");
+            int playListId= getNameInteger(buffer_command,"playListId");
+            printf("%s %d %d\n", path,music,playListId );
+            if (music == -1 && playListId == -1){
+                size_send= strlen(INVALID_DATA);
+                    // send(socket_num,&size_send,sizeof(int),0);
+                send(socket_num ,INVALID_DATA, size_send, 0 );
+                sendLog(" was not sent music or play data",INVALID_DATA ); 
+            }else{
+                char* result = addMusicToPlayList(path,playListId,music);
+                if(result == NULL ){
+                    size_send= strlen(INVALID_DATA);
+                    // send(socket_num,&size_send,sizeof(int),0);
+                    send(socket_num ,INVALID_DATA, size_send, 0 );
+                    sendLog("Error occur when try to match music",INVALID_DATA ); 
+                }else{
+                    size_send= strlen(result);
+                    // send(socket_num,&size_send,sizeof(int),0);
+                    send(socket_num ,result, size_send, 0 );
+                    sendLog(result,MATCH_MUSIC_PLAYLIST); 
+                }            
+            }
+
         }
         else {
             send(socket_num ,UNKNOW_OPTION, strlen(UNKNOW_OPTION), 0 );
@@ -226,8 +305,9 @@ void *threadFunction(void *threadArg) {
         
             // buffer = {0};
     }
+    end:
     // free(threadArg);
-    close(socket_num);
-    pthread_exit((void*) threadArg); 
+        close(socket_num);
+    // pthread_exit((void*) threadArg); 
 }
 

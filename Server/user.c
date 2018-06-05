@@ -88,7 +88,7 @@ cJSON *createUserJson(char* pName, char* pPass,char* pPath){
 
 
 
-cJSON *createUserFile(char* pName){
+cJSON *createUserFile(char* pName,char* pPath){
 
     //"id": "1",
   // "name": "User1",
@@ -96,6 +96,7 @@ cJSON *createUserFile(char* pName){
   // "playListArray":
     cJSON *id = cJSON_CreateString(pName);
     cJSON *name = cJSON_CreateString(pName);
+    cJSON *path = cJSON_CreateString(pPath);
     cJSON *playListAccount = cJSON_CreateNumber(0);
     cJSON *playListArray = cJSON_CreateArray();
 
@@ -103,6 +104,7 @@ cJSON *createUserFile(char* pName){
     cJSON *user = cJSON_CreateObject();
     cJSON_AddItemToObject(user, "id", id);
     cJSON_AddItemToObject(user, "name", name);
+    cJSON_AddItemToObject(user, "path", path);
     cJSON_AddItemToObject(user, "playListAccount", playListAccount);
     cJSON_AddItemToObject(user, "playListArray",playListArray);
     // printf("%s\n",cJSON_Print(user) );
@@ -110,12 +112,15 @@ cJSON *createUserFile(char* pName){
 }
 
 int saveUserFile(char* pName){
-    // printf("%s\n", "saveUserFile");
-    cJSON *user = createUserFile(pName);
-    // printf("%s\n",cJSON_Print(user) );
+
     char aPath[] = USER_PATH; 
     char *path =  strcat(aPath,pName);
     path = strcat(path,".json");
+    // printf("%s\n", "saveUserFile");
+    cJSON *user = createUserFile(pName,path);
+    // printf("%s\n",cJSON_Print(user) );
+    
+    
     return saveJsonFile( cJSON_Print(user),path);
 }
 
@@ -152,6 +157,8 @@ char *getUserName(char* data){
     return name->valuestring;
 
 }
+
+
 
 
 

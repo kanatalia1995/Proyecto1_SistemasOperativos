@@ -44,5 +44,19 @@ int saveJsonFile(char* file,char* path){
 void logger(char* message){
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
-    printf("now: %d-%d-%d %d:%d:%d   %s\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec,message); 
+    // printf("Time: %d-%d-%d %d:%d:%d   %s\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec,message); 
+    
+    FILE *logFile;
+    char buffer[256];
+    sprintf(buffer, "Time: %d-%d-%d %d:%d:%d   %s\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec,message); 
+    printf("%s\n",buffer );
+    logFile=fopen("log.txt", "a");
+    if(logFile==NULL) {
+        perror("Error opening file.");
+    }
+    else {
+        fprintf(logFile, "%s", buffer);
+    }
+    fclose(logFile);
+
 }

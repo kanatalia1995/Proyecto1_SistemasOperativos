@@ -47,7 +47,7 @@ int main(int argc, char const *argv[])
       * for the incoming connection
    */
    
-   listen(sockfd,20);
+   listen(sockfd,5);
    clilen = sizeof(cli_addr);
    int new_socket;
    int errorSize;
@@ -59,10 +59,22 @@ int main(int argc, char const *argv[])
         }else{
           printf("%s %d\n", "New user in socket: ",new_socket);
           pthread_t thread_id;
+          // pid_t process;
           tdata_t *data = (tdata_t *) malloc(sizeof(tdata_t));
           data->socket = new_socket;
           data->sockfd = sockfd;
+
+          // process = fork();
+          // if(process < 0){
+          //   printf("%s\n", "Error creating process");
+          // }else if(process == 0){
+          //   threadFunction(data);
+          // }else {
+          //   printf("new process was created");
+          // }
+
           pthread_create(&thread_id, NULL, threadFunction,(void *) data);
+          // close(sockfd);
         }
   }  
 
