@@ -1,0 +1,123 @@
+{
+	"id":	1,
+	"name":	"User1",
+	"path":	"database/users/user1.json",
+	"playListAccount":	4,
+	"playListArray":	[{
+			"id":	1,
+			"name":	"Soft music",
+			"musicAccount":	1,
+			"musicList":	[{
+					"id":	1,
+					"title":	"kissStranger",
+					"artist":	"DNCE",
+					"path":	"database/music/kissing_strangers.mp3",
+					"duration":	"03:22"
+				}, {
+					"id":	2,
+					"title":	"Mr BrightSide",
+					"artist":	"The killers",
+					"path":	"database/music/MrBrightside_thekillers.mp3",
+					"duration":	"03:22"
+				}, {
+					"id":	3,
+					"title":	"Updown Funk",
+					"artist":	"Bruno Mars",
+					"path":	"database/music/updown_funk_brunoMars.mp3",
+					"duration":	"03:22"
+				}]
+		}, {
+			"id":	2,
+			"name":	"Light music",
+			"musicAccount":	0,
+			"musicList":	[{
+					"id":	2,
+					"title":	"Mr BrightSide",
+					"artist":	"The killers",
+					"path":	"database/music/MrBrightside_thekillers.mp3",
+					"duration":	"03:22"
+				}, {
+					"id":	3,
+					"title":	"Updown Funk",
+					"artist":	"Bruno Mars",
+					"path":	"database/music/updown_funk_brunoMars.mp3",
+					"duration":	"03:22"
+				}, {
+					"id":	3,
+					"title":	"Updown Funk",
+					"artist":	"Bruno Mars",
+					"path":	"database/music/updown_funk_brunoMars.mp3",
+					"duration":	"03:22"
+				}]
+		}, {
+			"id":	3,
+			"name":	"Rock and Roll Favs",
+			"musicAccount":	0,
+			"musicList":	[{
+					"id":	3,
+					"title":	"Updown Funk",
+					"artist":	"Bruno Mars",
+					"path":	"database/music/updown_funk_brunoMars.mp3",
+					"duration":	"03:22"
+				}]
+		}, {
+			"id":	4,
+			"name":	"Example",
+			"musicAccount":	0,
+			"musicList":	[{
+					"id":	7,
+					"title":	"La complicidad",
+					"artist":	"Cultura profética",
+					"path":	"database/music/La complicidad.mp3",
+					"duration":	"06:03"
+				}, {
+					"id":	8,
+					"title":	"Someone like you",
+					"artist":	"Adele",
+					"path":	"database/music/Someone like you.mp3",
+					"duration":	"04:47"
+				}, {
+					"id":	9,
+					"title":	"Rolling in the Deep",
+					"artist":	"Adele",
+					"path":	"database/music/Rolling in the Deep.mp3",
+					"duration":	"03:49"
+				}, {
+					"id":	10,
+					"title":	"Set Fire to the Rain",
+					"artist":	"Adele",
+					"path":	"database/music/Set Fire to the Rain.mp3",
+					"duration":	"0:01"
+				}, {
+					"id":	6,
+					"title":	"Rimas pa' seducir",
+					"artist":	"Cultura profética",
+					"path":	"database/music/Rimas pa' seducir.mp3",
+					"duration":	"03:06"
+				}, {
+					"id":	7,
+					"title":	"La complicidad",
+					"artist":	"Cultura profética",
+					"path":	"database/music/La complicidad.mp3",
+					"duration":	"06:03"
+				}, {
+					"id":	8,
+					"title":	"Someone like you",
+					"artist":	"Adele",
+					"path":	"database/music/Someone like you.mp3",
+					"duration":	"04:47"
+				}, {
+					"id":	9,
+					"title":	"Rolling in the Deep",
+					"artist":	"Adele",
+					"path":	"database/music/Rolling in the Deep.mp3",
+					"duration":	"03:49"
+				}, {
+					"id":	10,
+					"title":	"Set Fire to the Rain",
+					"artist":	"Adele",
+					"path":	"database/music/Set Fire to the Rain.mp3",
+					"duration":	"0:01"
+				}]
+		}]
+}

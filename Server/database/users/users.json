@@ -1,0 +1,36 @@
+{
+	"users":	[{
+			"id":	"1",
+			"name":	"User1",
+			"password":	"pass1",
+			"path":	"database/users/user1.json"
+		}, {
+			"id":	"1",
+			"name":	"User2",
+			"password":	"pass2",
+			"path":	"database/users/user2.json"
+		}, {
+			"id":	"1",
+			"name":	"User3",
+			"password":	"pass3",
+			"path":	"database/users/user3.json"
+		}, {
+			"id":	"1",
+			"name":	"Edisson",
+			"password":	"5656ed",
+			"path":	"database/users/Edisson.json"
+		}, {
+			"id":	"1",
+			"name":	"Katerine",
+			"password":	"6767ka",
+			"path":	"database/users/Katerine.json"
+		}, {
+			"name":	"1",
+			"password":	"1",
+			"path":	"1"
+		}, {
+			"name":	"1",
+			"password":	"1",
+			"path":	"1"
+		}]
+}

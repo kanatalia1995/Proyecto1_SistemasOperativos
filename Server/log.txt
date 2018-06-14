@@ -1,0 +1,777 @@
+Time: 2018-6-5 5:57:21   COMMAND:GET_AUDIO
+Time: 2018-6-5 5:57:21   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-5 5:57:26   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-5 5:57:34   COMMAND:GET_AUDIO
+Time: 2018-6-5 5:57:34   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-5 5:57:35   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-8 12:43:54   COMMAND:LOGIN
+Time: 2018-6-8 13:27:27   COMMAND:LOGIN
+Time: 2018-6-8 13:27:27   user login: database/users/user1.json
+Time: 2018-6-8 13:27:27   user login: User1
+Time: 2018-6-8 13:27:27   COMMAND:GET_ALL_SONGS
+Time: 2018-6-8 13:27:27   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-8 13:28:45   COMMAND:GET_AUDIO
+Time: 2018-6-8 13:28:45   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-8 13:28:51   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-8 13:28:51   COMMAND:GET_AUDIO
+Time: 2018-6-8 13:28:51   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-8 13:28:57   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-8 13:28:57   COMMAND:GET_AUDIO
+Time: 2018-6-8 13:28:57   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-8 13:28:59   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-8 13:28:59   COMMAND:GET_AUDIO
+Time: 2018-6-8 13:28:59   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-8 13:29:2   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-8 13:29:2   COMMAND:GET_AUDIO
+Time: 2018-6-8 13:29:2   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-8 13:29:4   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-8 13:29:4   COMMAND:GET_AUDIO
+Time: 2018-6-8 13:29:4   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-8 13:29:6   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-8 13:29:40   COMMAND:GET_AUDIO
+Time: 2018-6-8 13:29:40   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-8 13:29:47   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-8 13:29:51   COMMAND:GET_ALL_SONGS
+Time: 2018-6-8 13:29:51   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 4:27:56   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:41:7   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:41:7   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:48:3   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:48:20   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:48:43   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:48:50   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:55:11   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:55:11   COMMAND:ERROR PARSING FILE
+Time: 2018-6-9 4:59:32   COMMAND:LOGIN
+Time: 2018-6-9 4:59:32   user login: database/users/user1.json
+Time: 2018-6-9 4:59:32   user login: User1
+Time: 2018-6-9 4:59:32   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 4:59:32   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 5:29:44   COMMAND:LOGIN
+Time: 2018-6-9 5:29:44   user login: database/users/user1.json
+Time: 2018-6-9 5:29:44   user login: User1
+Time: 2018-6-9 5:30:4   COMMAND:LOGIN
+Time: 2018-6-9 5:30:4   user login: database/users/user1.json
+Time: 2018-6-9 5:30:4   user login: User1
+Time: 2018-6-9 5:30:4   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 5:30:4   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 5:30:56   COMMAND:LOGIN
+Time: 2018-6-9 5:30:56   user login: database/users/user1.json
+Time: 2018-6-9 5:30:56   user login: User1
+Time: 2018-6-9 5:30:57   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 5:30:57   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 13:20:26   COMMAND:CREATE_PLAYLIST
+Time: 2018-6-9 13:20:26   CREATE_PLAYLISTPlay List was created
+Time: 2018-6-9 13:33:36   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 13:33:36   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 13:35:53   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 13:35:53   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 13:56:8   COMMAND:GET_AUDIO
+Time: 2018-6-9 13:56:8   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 13:56:9   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 13:56:10   COMMAND:GET_AUDIO
+Time: 2018-6-9 13:56:10   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 13:56:12   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 13:56:25   COMMAND:GET_AUDIO
+Time: 2018-6-9 13:56:25   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 13:56:27   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 17:43:59   COMMAND:LOGIN
+Time: 2018-6-9 17:43:59   user login: database/users/user1.json
+Time: 2018-6-9 17:43:59   user login: User1
+Time: 2018-6-9 17:43:59   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 17:43:59   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 17:47:21   COMMAND:LOGIN
+Time: 2018-6-9 17:47:21   user login: database/users/user1.json
+Time: 2018-6-9 17:47:21   user login: User1
+Time: 2018-6-9 17:47:22   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 17:47:22   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 17:47:57   COMMAND:LOGIN
+Time: 2018-6-9 17:47:57   user login: database/users/user2.json
+Time: 2018-6-9 18:24:1   COMMAND:LOGIN
+Time: 2018-6-9 18:24:1   user login: database/users/user2.json
+Time: 2018-6-9 18:24:11   COMMAND:LOGIN
+Time: 2018-6-9 18:24:11   user login: database/users/user1.json
+Time: 2018-6-9 18:24:11   user login: User1
+Time: 2018-6-9 18:24:12   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 18:24:12   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 18:38:50   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:38:50   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 18:38:52   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:38:52   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:38:52   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 18:38:55   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:39:30   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:39:30   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-9 18:39:37   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:39:37   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:39:37   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-9 18:39:44   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:39:44   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:39:44   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 18:39:46   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:39:46   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:39:46   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 18:39:48   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:40:3   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:40:3   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 18:40:5   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:40:7   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:40:7   SEND_AUDIO Path:database/music/updown_funk_brunoMars.mp3
+Time: 2018-6-9 18:40:9   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:40:13   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:40:13   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-9 18:40:19   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 18:40:19   COMMAND:GET_AUDIO
+Time: 2018-6-9 18:40:19   SEND_AUDIO Path:database/music/MrBrightside_thekillers.mp3
+Time: 2018-6-9 18:40:26   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 22:22:46   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:22:46   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:24:2   COMMAND:LOGIN
+Time: 2018-6-9 22:24:2   user login: database/users/Edisson.json
+Time: 2018-6-9 22:24:2   user login: Edisson
+Time: 2018-6-9 22:24:29   COMMAND:LOGIN
+Time: 2018-6-9 22:26:7   COMMAND:LOGIN
+Time: 2018-6-9 22:26:7   user login: database/users/user1.json
+Time: 2018-6-9 22:26:7   user login: User1
+Time: 2018-6-9 22:26:7   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:26:7   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:26:14   COMMAND:CREATE_PLAYLIST
+Time: 2018-6-9 22:26:14   CREATE_PLAYLISTPlay List was created
+Time: 2018-6-9 22:26:20   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:26:20   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:26:21   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:26:21   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:26:25   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:26:25   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 22:26:28   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:26:28   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 22:26:33   COMMAND:GET_AUDIO
+Time: 2018-6-9 22:26:33   SEND_AUDIO Path:database/music/La complicidad.mp3
+Time: 2018-6-9 22:26:38   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 22:26:38   COMMAND:GET_AUDIO
+Time: 2018-6-9 22:26:38   SEND_AUDIO Path:database/music/La complicidad.mp3
+Time: 2018-6-9 22:26:42   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 22:27:12   COMMAND:GET_AUDIO
+Time: 2018-6-9 22:27:12   SEND_AUDIO Path:database/music/Rimas pa' seducir.mp3
+Time: 2018-6-9 22:27:12   ERROR_OPEN_AUDIO_FILE PATH:database/music/Rimas pa' seducir.mp3
+Time: 2018-6-9 22:27:13   COMMAND:GET_AUDIO
+Time: 2018-6-9 22:27:13   SEND_AUDIO Path:database/music/Rimas pa' seducir.mp3
+Time: 2018-6-9 22:27:13   ERROR_OPEN_AUDIO_FILE PATH:database/music/Rimas pa' seducir.mp3
+Time: 2018-6-9 22:27:35   COMMAND:GET_AUDIO
+Time: 2018-6-9 22:27:35   SEND_AUDIO Path:database/music/La complicidad.mp3
+Time: 2018-6-9 22:27:40   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 22:27:40   COMMAND:GET_AUDIO
+Time: 2018-6-9 22:27:40   SEND_AUDIO Path:database/music/La complicidad.mp3
+Time: 2018-6-9 22:27:44   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-9 22:27:49   COMMAND:GET_AUDIO
+Time: 2018-6-9 22:27:49   SEND_AUDIO Path:database/music/Rimas pa' seducir.mp3
+Time: 2018-6-9 22:27:49   ERROR_OPEN_AUDIO_FILE PATH:database/music/Rimas pa' seducir.mp3
+Time: 2018-6-9 22:28:45   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:28:45   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:28:45   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:28:45   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:30:4   COMMAND:LOGIN
+Time: 2018-6-9 22:31:59   COMMAND:LOGIN
+Time: 2018-6-9 22:31:59   user login: database/users/Katerine.json
+Time: 2018-6-9 22:31:59   user login: Katerine
+Time: 2018-6-9 22:32:0   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:32:0   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:32:19   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:32:19   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:33:34   COMMAND:CREATE_PLAYLIST
+Time: 2018-6-9 22:33:34   CREATE_PLAYLISTPlay List was created
+Time: 2018-6-9 22:33:51   COMMAND:CREATE_PLAYLIST
+Time: 2018-6-9 22:33:51   CREATE_PLAYLISTPlay List was created
+Time: 2018-6-9 22:35:8   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:35:8   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:35:18   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:35:18   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:35:22   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:35:22   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 22:35:26   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:35:26   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 22:35:35   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:35:35   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 22:35:40   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:35:40   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 22:43:14   COMMAND:LOGIN
+Time: 2018-6-9 22:43:14   user login: database/users/Edisson.json
+Time: 2018-6-9 22:43:14   user login: Edisson
+Time: 2018-6-9 22:43:57   COMMAND:LOGIN
+Time: 2018-6-9 22:43:57   user login: database/users/Edisson.json
+Time: 2018-6-9 22:43:57   user login: Edisson
+Time: 2018-6-9 22:43:58   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:43:58   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:48:26   COMMAND:CREATE_PLAYLIST
+Time: 2018-6-9 22:48:26   CREATE_PLAYLISTPlay List was created
+Time: 2018-6-9 22:48:30   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:48:30   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:53:24   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:53:24   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:53:24   COMMAND:GET_ALL_SONGS
+Time: 2018-6-9 22:53:24   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-9 22:53:32   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:53:32   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 22:53:37   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:53:37   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-9 22:53:41   COMMAND:MATCH_MUSIC_PLAYLIST
+Time: 2018-6-9 22:53:41   MATCH_MUSIC_PLAYLISTMUSIC ADDED 
+Time: 2018-6-12 16:9:18   COMMAND:LOGIN
+Time: 2018-6-12 16:9:18   user login: database/users/Edisson.json
+Time: 2018-6-12 16:9:18   user login: Edisson
+Time: 2018-6-12 16:9:18   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:9:18   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:16:42   COMMAND:LOGIN
+Time: 2018-6-12 16:16:42   user login: database/users/Edisson.json
+Time: 2018-6-12 16:16:42   user login: Edisson
+Time: 2018-6-12 16:16:43   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:16:43   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:18:36   COMMAND:LOGIN
+Time: 2018-6-12 16:18:36   user login: database/users/Edisson.json
+Time: 2018-6-12 16:18:36   user login: Edisson
+Time: 2018-6-12 16:18:37   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:18:37   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:20:2   COMMAND:LOGIN
+Time: 2018-6-12 16:20:2   user login: database/users/Edisson.json
+Time: 2018-6-12 16:20:2   user login: Edisson
+Time: 2018-6-12 16:20:3   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:20:3   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:22:54   COMMAND:LOGIN
+Time: 2018-6-12 16:22:54   user login: database/users/Edisson.json
+Time: 2018-6-12 16:22:54   user login: Edisson
+Time: 2018-6-12 16:22:55   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:22:55   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:25:18   COMMAND:LOGIN
+Time: 2018-6-12 16:25:18   user login: database/users/Edisson.json
+Time: 2018-6-12 16:25:18   user login: Edisson
+Time: 2018-6-12 16:25:19   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:25:19   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:28:6   COMMAND:LOGIN
+Time: 2018-6-12 16:28:6   user login: database/users/Edisson.json
+Time: 2018-6-12 16:28:6   user login: Edisson
+Time: 2018-6-12 16:28:7   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:28:7   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:28:33   COMMAND:GET_AUDIO
+Time: 2018-6-12 16:28:33   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-12 16:28:40   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 16:28:40   COMMAND:GET_AUDIO
+Time: 2018-6-12 16:28:40   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-12 16:28:47   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 16:28:47   COMMAND:GET_AUDIO
+Time: 2018-6-12 16:28:47   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-12 16:28:54   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 16:46:15   COMMAND:LOGIN
+Time: 2018-6-12 16:46:15   user login: database/users/Edisson.json
+Time: 2018-6-12 16:46:15   user login: Edisson
+Time: 2018-6-12 16:46:16   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:46:16   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:47:4   COMMAND:LOGIN
+Time: 2018-6-12 16:47:4   user login: database/users/Edisson.json
+Time: 2018-6-12 16:47:4   user login: Edisson
+Time: 2018-6-12 16:47:4   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:47:4   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:51:45   COMMAND:LOGIN
+Time: 2018-6-12 16:51:45   user login: database/users/Edisson.json
+Time: 2018-6-12 16:51:45   user login: Edisson
+Time: 2018-6-12 16:51:46   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:51:46   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:53:28   COMMAND:LOGIN
+Time: 2018-6-12 16:53:28   user login: database/users/Edisson.json
+Time: 2018-6-12 16:53:28   user login: Edisson
+Time: 2018-6-12 16:53:28   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:53:28   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 16:55:50   COMMAND:LOGIN
+Time: 2018-6-12 16:55:50   user login: database/users/Edisson.json
+Time: 2018-6-12 16:55:50   user login: Edisson
+Time: 2018-6-12 16:55:51   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 16:55:51   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 17:1:54   COMMAND:LOGIN
+Time: 2018-6-12 17:1:54   user login: database/users/Edisson.json
+Time: 2018-6-12 17:1:54   user login: Edisson
+Time: 2018-6-12 17:1:55   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 17:1:55   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 17:4:15   COMMAND:LOGIN
+Time: 2018-6-12 17:4:15   user login: database/users/Edisson.json
+Time: 2018-6-12 17:4:15   user login: Edisson
+Time: 2018-6-12 17:4:16   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 17:4:16   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 17:4:50   COMMAND:LOGIN
+Time: 2018-6-12 17:4:50   user login: database/users/Edisson.json
+Time: 2018-6-12 17:4:50   user login: Edisson
+Time: 2018-6-12 17:4:53   COMMAND:LOGIN
+Time: 2018-6-12 17:4:53   user login: database/users/Edisson.json
+Time: 2018-6-12 17:4:53   user login: Edisson
+Time: 2018-6-12 17:4:53   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 17:4:53   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 17:42:41   COMMAND:LOGIN
+Time: 2018-6-12 17:42:41   user login: database/users/Edisson.json
+Time: 2018-6-12 17:42:41   user login: Edisson
+Time: 2018-6-12 17:42:41   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 17:42:41   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 17:43:10   COMMAND:LOGIN
+Time: 2018-6-12 17:43:10   user login: database/users/Edisson.json
+Time: 2018-6-12 17:43:10   user login: Edisson
+Time: 2018-6-12 17:43:10   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 17:43:10   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 17:44:21   COMMAND:LOGIN
+Time: 2018-6-12 17:44:21   user login: database/users/Edisson.json
+Time: 2018-6-12 17:44:21   user login: Edisson
+Time: 2018-6-12 17:44:21   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 17:44:21   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:11:0   COMMAND:LOGIN
+Time: 2018-6-12 18:11:0   user login: database/users/Edisson.json
+Time: 2018-6-12 18:11:0   user login: Edisson
+Time: 2018-6-12 18:11:2   COMMAND:LOGIN
+Time: 2018-6-12 18:11:2   user login: database/users/Edisson.json
+Time: 2018-6-12 18:11:2   user login: Edisson
+Time: 2018-6-12 18:11:3   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:11:3   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:11:30   COMMAND:LOGIN
+Time: 2018-6-12 18:11:30   user login: database/users/Edisson.json
+Time: 2018-6-12 18:11:30   user login: Edisson
+Time: 2018-6-12 18:11:30   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:11:30   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:12:13   COMMAND:LOGIN
+Time: 2018-6-12 18:12:13   user login: database/users/Edisson.json
+Time: 2018-6-12 18:12:13   user login: Edisson
+Time: 2018-6-12 18:12:13   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:12:13   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:14:55   COMMAND:LOGIN
+Time: 2018-6-12 18:14:55   user login: database/users/Edisson.json
+Time: 2018-6-12 18:14:55   user login: Edisson
+Time: 2018-6-12 18:14:55   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:14:55   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:17:21   COMMAND:LOGIN
+Time: 2018-6-12 18:17:21   user login: database/users/Edisson.json
+Time: 2018-6-12 18:17:21   user login: Edisson
+Time: 2018-6-12 18:17:22   COMMAND:LOGIN
+Time: 2018-6-12 18:17:22   user login: database/users/Edisson.json
+Time: 2018-6-12 18:17:22   user login: Edisson
+Time: 2018-6-12 18:17:22   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:17:22   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:23:53   COMMAND:LOGIN
+Time: 2018-6-12 18:23:53   user login: database/users/Edisson.json
+Time: 2018-6-12 18:23:53   user login: Edisson
+Time: 2018-6-12 18:23:54   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:23:54   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:27:24   COMMAND:LOGIN
+Time: 2018-6-12 18:27:24   user login: database/users/Edisson.json
+Time: 2018-6-12 18:27:24   user login: Edisson
+Time: 2018-6-12 18:27:25   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:27:25   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:29:13   COMMAND:LOGIN
+Time: 2018-6-12 18:29:13   user login: database/users/Edisson.json
+Time: 2018-6-12 18:29:13   user login: Edisson
+Time: 2018-6-12 18:29:13   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:29:13   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:32:25   COMMAND:LOGIN
+Time: 2018-6-12 18:32:25   user login: database/users/Edisson.json
+Time: 2018-6-12 18:32:25   user login: Edisson
+Time: 2018-6-12 18:32:27   COMMAND:LOGIN
+Time: 2018-6-12 18:32:27   user login: database/users/Edisson.json
+Time: 2018-6-12 18:32:27   user login: Edisson
+Time: 2018-6-12 18:32:27   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:32:27   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:47:5   COMMAND:LOGIN
+Time: 2018-6-12 18:47:5   user login: database/users/Edisson.json
+Time: 2018-6-12 18:47:5   user login: Edisson
+Time: 2018-6-12 18:47:8   COMMAND:LOGIN
+Time: 2018-6-12 18:47:8   user login: database/users/Edisson.json
+Time: 2018-6-12 18:47:8   user login: Edisson
+Time: 2018-6-12 18:47:8   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:47:8   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:47:27   COMMAND:LOGIN
+Time: 2018-6-12 18:47:27   user login: database/users/Edisson.json
+Time: 2018-6-12 18:47:27   user login: Edisson
+Time: 2018-6-12 18:47:27   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:47:27   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:48:4   COMMAND:LOGIN
+Time: 2018-6-12 18:48:4   user login: database/users/Edisson.json
+Time: 2018-6-12 18:48:4   user login: Edisson
+Time: 2018-6-12 18:48:5   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:48:5   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:51:17   COMMAND:LOGIN
+Time: 2018-6-12 18:51:17   user login: database/users/Edisson.json
+Time: 2018-6-12 18:51:17   user login: Edisson
+Time: 2018-6-12 18:51:17   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:51:17   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:57:32   COMMAND:LOGIN
+Time: 2018-6-12 18:57:32   user login: database/users/Edisson.json
+Time: 2018-6-12 18:57:32   user login: Edisson
+Time: 2018-6-12 18:57:33   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:57:33   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 18:59:37   COMMAND:LOGIN
+Time: 2018-6-12 18:59:37   user login: database/users/Edisson.json
+Time: 2018-6-12 18:59:37   user login: Edisson
+Time: 2018-6-12 18:59:38   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 18:59:38   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:0:7   COMMAND:LOGIN
+Time: 2018-6-12 19:0:7   user login: database/users/Edisson.json
+Time: 2018-6-12 19:0:7   user login: Edisson
+Time: 2018-6-12 19:0:8   COMMAND:LOGIN
+Time: 2018-6-12 19:0:8   user login: database/users/Edisson.json
+Time: 2018-6-12 19:0:8   user login: Edisson
+Time: 2018-6-12 19:0:9   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 19:0:9   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:11:14   COMMAND:LOGIN
+Time: 2018-6-12 19:11:14   user login: database/users/Edisson.json
+Time: 2018-6-12 19:11:14   user login: Edisson
+Time: 2018-6-12 19:11:14   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 19:11:14   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:12:9   COMMAND:LOGIN
+Time: 2018-6-12 19:12:9   user login: database/users/Edisson.json
+Time: 2018-6-12 19:12:9   user login: Edisson
+Time: 2018-6-12 19:12:10   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 19:12:10   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:25:55   COMMAND:LOGIN
+Time: 2018-6-12 19:25:55   user login: database/users/Edisson.json
+Time: 2018-6-12 19:25:55   user login: Edisson
+Time: 2018-6-12 19:25:56   COMMAND:LOGIN
+Time: 2018-6-12 19:25:56   user login: database/users/Edisson.json
+Time: 2018-6-12 19:25:56   user login: Edisson
+Time: 2018-6-12 19:25:57   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 19:25:57   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:26:45   COMMAND:LOGIN
+Time: 2018-6-12 19:26:45   user login: database/users/Edisson.json
+Time: 2018-6-12 19:26:45   user login: Edisson
+Time: 2018-6-12 19:26:45   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 19:26:45   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:27:36   COMMAND:LOGIN
+Time: 2018-6-12 19:27:36   user login: database/users/Edisson.json
+Time: 2018-6-12 19:27:36   user login: Edisson
+Time: 2018-6-12 19:27:37   COMMAND:LOGIN
+Time: 2018-6-12 19:27:37   user login: database/users/Edisson.json
+Time: 2018-6-12 19:27:37   user login: Edisson
+Time: 2018-6-12 19:27:38   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 19:27:38   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:29:50   COMMAND:LOGIN
+Time: 2018-6-12 19:29:50   user login: database/users/Edisson.json
+Time: 2018-6-12 19:29:50   user login: Edisson
+Time: 2018-6-12 19:29:51   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 19:29:51   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:30:20   COMMAND:LOGIN
+Time: 2018-6-12 19:30:20   user login: database/users/Edisson.json
+Time: 2018-6-12 19:30:20   user login: Edisson
+Time: 2018-6-12 19:30:20   COMMAND:GET_ALL_SONGS
+Time: 2018-6-12 19:30:20   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-12 19:31:15   COMMAND:GET_AUDIO
+Time: 2018-6-12 19:31:15   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-12 19:31:22   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 19:31:22   COMMAND:GET_AUDIO
+Time: 2018-6-12 19:31:22   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-12 19:31:29   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 19:31:46   COMMAND:GET_AUDIO
+Time: 2018-6-12 19:31:46   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-12 19:31:53   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 19:31:53   COMMAND:GET_AUDIO
+Time: 2018-6-12 19:31:53   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-12 19:32:0   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 19:32:15   COMMAND:GET_AUDIO
+Time: 2018-6-12 19:32:15   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-12 19:32:21   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 19:32:21   COMMAND:GET_AUDIO
+Time: 2018-6-12 19:32:21   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-12 19:32:28   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-12 19:33:14   COMMAND:GET_AUDIO
+Time: 2018-6-12 19:33:14   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-12 19:33:21   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 22:8:51   COMMAND:LOGIN
+Time: 2018-6-13 22:8:51   user login: database/users/Edisson.json
+Time: 2018-6-13 22:8:51   user login: Edisson
+Time: 2018-6-13 22:8:51   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:8:51   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:16:6   COMMAND:LOGIN
+Time: 2018-6-13 22:16:6   user login: database/users/Edisson.json
+Time: 2018-6-13 22:16:6   user login: Edisson
+Time: 2018-6-13 22:16:6   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:16:6   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:35:13   COMMAND:LOGIN
+Time: 2018-6-13 22:35:13   user login: database/users/Edisson.json
+Time: 2018-6-13 22:35:13   user login: Edisson
+Time: 2018-6-13 22:35:13   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:35:13   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:36:9   COMMAND:LOGIN
+Time: 2018-6-13 22:36:9   user login: database/users/Edisson.json
+Time: 2018-6-13 22:36:9   user login: Edisson
+Time: 2018-6-13 22:36:10   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:36:10   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:38:1   COMMAND:LOGIN
+Time: 2018-6-13 22:38:1   user login: database/users/Edisson.json
+Time: 2018-6-13 22:38:1   user login: Edisson
+Time: 2018-6-13 22:38:3   COMMAND:LOGIN
+Time: 2018-6-13 22:38:3   user login: database/users/Edisson.json
+Time: 2018-6-13 22:38:3   user login: Edisson
+Time: 2018-6-13 22:38:4   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:38:4   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:43:6   COMMAND:LOGIN
+Time: 2018-6-13 22:43:6   user login: database/users/Edisson.json
+Time: 2018-6-13 22:43:6   user login: Edisson
+Time: 2018-6-13 22:43:6   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:43:6   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:44:22   COMMAND:LOGIN
+Time: 2018-6-13 22:44:22   user login: database/users/Edisson.json
+Time: 2018-6-13 22:44:22   user login: Edisson
+Time: 2018-6-13 22:44:23   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:44:23   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:48:25   COMMAND:LOGIN
+Time: 2018-6-13 22:48:25   user login: database/users/Edisson.json
+Time: 2018-6-13 22:48:25   user login: Edisson
+Time: 2018-6-13 22:48:26   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:48:26   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:49:37   COMMAND:LOGIN
+Time: 2018-6-13 22:49:37   user login: database/users/Edisson.json
+Time: 2018-6-13 22:49:37   user login: Edisson
+Time: 2018-6-13 22:49:39   COMMAND:LOGIN
+Time: 2018-6-13 22:49:39   user login: database/users/Edisson.json
+Time: 2018-6-13 22:49:39   user login: Edisson
+Time: 2018-6-13 22:49:41   COMMAND:LOGIN
+Time: 2018-6-13 22:49:41   user login: database/users/Edisson.json
+Time: 2018-6-13 22:49:41   user login: Edisson
+Time: 2018-6-13 22:49:43   COMMAND:LOGIN
+Time: 2018-6-13 22:49:43   user login: database/users/Edisson.json
+Time: 2018-6-13 22:49:43   user login: Edisson
+Time: 2018-6-13 22:49:43   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:49:43   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:50:21   COMMAND:LOGIN
+Time: 2018-6-13 22:50:21   user login: database/users/Edisson.json
+Time: 2018-6-13 22:50:21   user login: Edisson
+Time: 2018-6-13 22:50:21   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:50:21   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:53:11   COMMAND:LOGIN
+Time: 2018-6-13 22:53:11   user login: database/users/Edisson.json
+Time: 2018-6-13 22:53:11   user login: Edisson
+Time: 2018-6-13 22:53:12   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:53:12   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:53:16   COMMAND:GET_AUDIO
+Time: 2018-6-13 22:53:16   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 22:53:23   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 22:53:23   COMMAND:GET_AUDIO
+Time: 2018-6-13 22:53:23   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-13 22:53:29   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 22:53:56   COMMAND:LOGIN
+Time: 2018-6-13 22:53:56   user login: database/users/Edisson.json
+Time: 2018-6-13 22:53:56   user login: Edisson
+Time: 2018-6-13 22:53:56   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 22:53:56   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 22:54:1   COMMAND:GET_AUDIO
+Time: 2018-6-13 22:54:1   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-13 22:54:8   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:4:32   COMMAND:LOGIN
+Time: 2018-6-13 23:4:32   user login: database/users/Edisson.json
+Time: 2018-6-13 23:4:32   user login: Edisson
+Time: 2018-6-13 23:4:35   COMMAND:LOGIN
+Time: 2018-6-13 23:4:35   user login: database/users/Edisson.json
+Time: 2018-6-13 23:4:35   user login: Edisson
+Time: 2018-6-13 23:4:35   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:4:35   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:7:53   COMMAND:LOGIN
+Time: 2018-6-13 23:7:53   user login: database/users/Edisson.json
+Time: 2018-6-13 23:7:53   user login: Edisson
+Time: 2018-6-13 23:7:53   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:7:53   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:13:47   COMMAND:LOGIN
+Time: 2018-6-13 23:13:47   user login: database/users/Edisson.json
+Time: 2018-6-13 23:13:47   user login: Edisson
+Time: 2018-6-13 23:13:48   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:13:48   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:15:42   COMMAND:LOGIN
+Time: 2018-6-13 23:15:42   user login: database/users/Edisson.json
+Time: 2018-6-13 23:15:42   user login: Edisson
+Time: 2018-6-13 23:15:42   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:15:42   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:16:18   COMMAND:LOGIN
+Time: 2018-6-13 23:16:18   user login: database/users/Edisson.json
+Time: 2018-6-13 23:16:18   user login: Edisson
+Time: 2018-6-13 23:16:18   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:16:18   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:16:28   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:16:28   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:17:47   COMMAND:LOGIN
+Time: 2018-6-13 23:17:47   user login: database/users/Edisson.json
+Time: 2018-6-13 23:17:47   user login: Edisson
+Time: 2018-6-13 23:17:47   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:17:47   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:17:49   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:17:49   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:17:53   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:17:53   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:17:58   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:17:58   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:18:0   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:18:0   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:18:6   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:18:6   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:18:6   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:18:6   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:18:8   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:18:8   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 23:18:15   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:18:16   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:18:16   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 23:18:22   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:19:0   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:19:0   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-13 23:19:7   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:20:54   COMMAND:LOGIN
+Time: 2018-6-13 23:20:54   user login: database/users/Edisson.json
+Time: 2018-6-13 23:20:54   user login: Edisson
+Time: 2018-6-13 23:20:56   COMMAND:LOGIN
+Time: 2018-6-13 23:20:56   user login: database/users/Edisson.json
+Time: 2018-6-13 23:20:56   user login: Edisson
+Time: 2018-6-13 23:20:57   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:20:57   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:20:59   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:20:59   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:0   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:0   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:6   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:6   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:10   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:10   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:10   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:10   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:11   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:11   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:12   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:12   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:13   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:13   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:55   COMMAND:LOGIN
+Time: 2018-6-13 23:21:55   user login: database/users/Edisson.json
+Time: 2018-6-13 23:21:55   user login: Edisson
+Time: 2018-6-13 23:21:55   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:55   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:57   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:57   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:58   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:58   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:59   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:59   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:21:59   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:21:59   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:22:0   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:22:0   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:22:1   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:22:1   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:22:2   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:22:2   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:0   COMMAND:LOGIN
+Time: 2018-6-13 23:23:0   user login: database/users/Edisson.json
+Time: 2018-6-13 23:23:0   user login: Edisson
+Time: 2018-6-13 23:23:1   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:1   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:5   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:5   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:10   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:10   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:14   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:14   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:15   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:15   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:16   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:16   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:17   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:17   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:18   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:18   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:26   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:26   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:27   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:27   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:28   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:28   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:23:29   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:23:29   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:25:35   COMMAND:LOGIN
+Time: 2018-6-13 23:25:35   user login: database/users/Edisson.json
+Time: 2018-6-13 23:25:35   user login: Edisson
+Time: 2018-6-13 23:25:35   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:25:35   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:27:15   COMMAND:LOGIN
+Time: 2018-6-13 23:27:15   user login: database/users/Edisson.json
+Time: 2018-6-13 23:27:15   user login: Edisson
+Time: 2018-6-13 23:27:16   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:27:16   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:31:20   COMMAND:LOGIN
+Time: 2018-6-13 23:31:20   user login: database/users/Edisson.json
+Time: 2018-6-13 23:31:20   user login: Edisson
+Time: 2018-6-13 23:31:21   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:31:21   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:31:36   COMMAND:LOGIN
+Time: 2018-6-13 23:31:36   user login: database/users/Edisson.json
+Time: 2018-6-13 23:31:36   user login: Edisson
+Time: 2018-6-13 23:31:36   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:31:36   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:33:51   COMMAND:LOGIN
+Time: 2018-6-13 23:33:51   user login: database/users/Edisson.json
+Time: 2018-6-13 23:33:51   user login: Edisson
+Time: 2018-6-13 23:33:51   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:33:51   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:33:55   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:33:55   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:33:57   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:33:57   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-13 23:34:4   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:34:4   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:34:4   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 23:34:11   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:34:11   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:34:11   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-13 23:34:18   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:34:18   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:34:18   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 23:34:25   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:34:25   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:34:25   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-13 23:34:31   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:34:31   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:34:31   SEND_AUDIO Path:database/music/Rolling in the Deep.mp3
+Time: 2018-6-13 23:34:38   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:34:38   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:34:38   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 23:34:45   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:34:45   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:34:45   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 23:34:52   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:36:47   COMMAND:LOGIN
+Time: 2018-6-13 23:36:47   user login: database/users/Edisson.json
+Time: 2018-6-13 23:36:47   user login: Edisson
+Time: 2018-6-13 23:36:48   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:36:48   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:36:50   COMMAND:GET_ALL_SONGS
+Time: 2018-6-13 23:36:50   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-13 23:36:54   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:36:54   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 23:37:1   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-13 23:37:2   COMMAND:GET_AUDIO
+Time: 2018-6-13 23:37:2   SEND_AUDIO Path:database/music/Set Fire to the Rain.mp3
+Time: 2018-6-13 23:37:9   SEND_AUDIO Path:Audio was sent
+Time: 2018-6-14 10:0:11   COMMAND:LOGIN
+Time: 2018-6-14 10:0:11   user login: database/users/Edisson.json
+Time: 2018-6-14 10:0:11   user login: Edisson
+Time: 2018-6-14 10:0:12   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:12   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:14   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:14   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:19   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:19   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:21   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:21   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:24   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:24   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:25   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:25   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:26   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:26   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:27   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:27   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:29   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:29   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:33   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:33   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:35   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:35   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:37   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:37   GET_ALL_SONGSConsult sucessful
+Time: 2018-6-14 10:0:42   COMMAND:GET_ALL_SONGS
+Time: 2018-6-14 10:0:42   GET_ALL_SONGSConsult sucessful

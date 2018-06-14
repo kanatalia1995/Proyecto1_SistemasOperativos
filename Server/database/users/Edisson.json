@@ -1,0 +1,48 @@
+{
+	"id":	1,
+	"name":	"Edisson",
+	"path":	"database/users/Edisson.json",
+	"playListAccount":	1,
+	"playListArray":	[{
+			"id":	1,
+			"name":	"Sad Songs",
+			"musicAccount":	0,
+			"musicList":	[{
+					"id":	10,
+					"title":	"Set Fire to the Rain",
+					"artist":	"Adele",
+					"path":	"database/music/Set Fire to the Rain.mp3",
+					"duration":	"0:01"
+				}, {
+					"id":	9,
+					"title":	"Rolling in the Deep",
+					"artist":	"Adele",
+					"path":	"database/music/Rolling in the Deep.mp3",
+					"duration":	"03:49"
+				}, {
+					"id":	10,
+					"title":	"Set Fire to the Rain",
+					"artist":	"Adele",
+					"path":	"database/music/Set Fire to the Rain.mp3",
+					"duration":	"0:01"
+				}, {
+					"id":	8,
+					"title":	"Someone like you",
+					"artist":	"Adele",
+					"path":	"database/music/Someone like you.mp3",
+					"duration":	"04:47"
+				}, {
+					"id":	9,
+					"title":	"Rolling in the Deep",
+					"artist":	"Adele",
+					"path":	"database/music/Rolling in the Deep.mp3",
+					"duration":	"03:49"
+				}, {
+					"id":	10,
+					"title":	"Set Fire to the Rain",
+					"artist":	"Adele",
+					"path":	"database/music/Set Fire to the Rain.mp3",
+					"duration":	"0:01"
+				}]
+		}]
+}
